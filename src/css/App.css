@@ -1,0 +1,25 @@
+@import './navbar.css';
+@import './banner.css';
+@import './copyright.css';
+
+:root {
+    --mainYellow: #d18f14;
+    --mainWhite: rgb(240, 240, 240);
+    --offWhite: rgb(233, 233, 233);
+  }  
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.fixed-top {
+    position: fixed;
+    top: 0;
+}
+
+.content {
+    margin-top: 105px;
+    position: relative;
+}

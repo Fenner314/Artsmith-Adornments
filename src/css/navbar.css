@@ -1,0 +1,72 @@
+.navbar {
+    background-color: white;
+    box-shadow: 0px 2px 15px rgb(117, 117, 117);
+    display: flex;
+    position: fixed;
+    top: 0;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 0;
+    height: 105px;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin-left: 3rem;
+}
+
+.navbar-brand {
+    width: 175px;
+    margin: -3rem 0;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 20rem;
+    margin: 0;
+}
+
+.nav-item {
+    margin: 1rem;
+    font-weight: 400;
+    font-size: 1.1rem;
+}
+
+.right-links {
+    display: flex;
+    position: absolute;
+    right: 0;
+    margin-right: 3rem;
+    margin-bottom: 0;
+}
+
+.right-link-item {
+    margin: .5rem;
+    font-size: 1.75rem;
+}
+
+#shopping-bag {
+    position: relative;
+    bottom: 1px;
+}
+
+.cart-total {
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--mainYellow);
+    color: var(--mainWhite);
+    font-size: .75rem;
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 50%;
+
+}
