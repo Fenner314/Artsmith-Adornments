@@ -1,0 +1,87 @@
+.contact {
+    background: var(--mainWhite);
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.contact h1 {
+    font-family: 'Playfair Display', Times, serif;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 4rem;
+    padding-bottom: 0;
+}
+
+.contact-grid-left {
+    display: grid;
+    grid-template-rows: 2fr repeat(3, 1fr);
+}
+
+.contact-grid-middle {
+    display: grid;
+    grid-template-rows: 2fr repeat(3, 1fr);
+}
+
+.contact-grid-right {
+    display: grid;
+    grid-template-rows: 2fr 3fr;
+}
+
+.contact-grid-middle h1 {
+    display: grid;
+    align-items: flex-end;
+}
+
+.contact-grid-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    height: fit-content;
+    row-gap: .75rem;
+    column-gap: .75rem;
+}
+
+.contact-grid-form input {
+    width: 250px;
+    height: 3rem;
+}
+
+.contact-form-input {
+    border: none;
+    padding: .5rem
+}
+
+#message {
+    resize: none;
+    /* height: 93%; */
+    width: 250px;
+    /* margin: .25rem; */
+    grid-column: 2 / span 1;
+    grid-row: 1 / span 3;
+}
+
+.newsletter {
+    padding-left: 4rem;
+    margin-top: 3rem;
+}
+
+.newsletter h5 {
+    font-weight: 600;
+}
+
+.newsletter button {
+    border: none;
+    border-bottom: 1px solid black;
+    padding: .2rem 1rem;
+    color: var(--mainYellow)
+}
+
+#newsletter {
+    width: 30%;
+    border: none;
+    border-bottom: 1px solid black;
+    background-color: transparent;
+    padding: .2rem
+}
