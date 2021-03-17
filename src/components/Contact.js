@@ -35,13 +35,12 @@ export default function Contact() {
                             <span className="underline"></span>
                         </div>
                         <div className="contact-form-box" id="message">
-                            <textarea className="contact-form-input" id="message" placeholder="Message" name="message" aria-label="message" />
+                            <textarea id="message" placeholder="Message" name="message" aria-label="message" />
                             <span className="underline"></span>
                         </div>
                         {/* <button className="send" type="submit" value="Send" >Send</button> */}
                         <div className="send">
                             <span className="bg"></span>
-                            <span className="border"></span>
                             <span className="text">Send</span>
                         </div>
                     </div>

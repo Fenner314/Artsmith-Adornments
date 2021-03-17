@@ -24,11 +24,12 @@
 
 .contact-grid-form {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, auto);
     grid-template-rows: repeat(4, 1fr);
     height: fit-content;
     row-gap: .75rem;
     column-gap: .75rem;
+    position: relative;
 }
 
 .contact-form-box {
@@ -36,7 +37,7 @@
 }
 
 .contact-grid-form input {
-    width: 250px;
+    width: 200px;
     height: 3rem;
 }
 .contact-grid-form input:focus {
@@ -59,15 +60,19 @@
 
 .contact-form-input {
     border: none;
-    padding: .5rem
+    padding: .5rem;
 }
 
 #message {
     resize: none;
-    width: 250px;
     grid-column: 2 / span 1;
     grid-row: 1 / span 3;
     height: 100%;
+}
+#message textarea {
+    width: 200px;
+    border: none;
+    padding: .5rem;
 }
 #message:focus {
     outline: none;
@@ -78,7 +83,7 @@
 
 .send {
     grid-column: 2 / span 1;
-    width: 40%;
+    width: 100px;
     justify-self: end;
     color: var(--mainYellow);
     background: transparent;
@@ -86,7 +91,7 @@
     text-align: center;
     line-height: 50px;
     text-decoration: none;
-    /* display: block; */
+    display: block;
     overflow: hidden;
 }
 .bg {
@@ -144,8 +149,71 @@
 
 #newsletter {
     width: 30%;
+    min-width: 150px;
     border: none;
     border-bottom: 1px solid black;
     background-color: transparent;
     padding: .2rem
+}
+
+@media only screen and (max-width: 1084px) {
+    .contact-grid {
+        grid-template-columns: repeat(2, auto);
+        grid-template-rows: repeat(2, auto);
+    }
+    .contact-grid-left, .contact-grid-middle {
+        justify-self: center;
+    }
+    .contact-grid-right {
+        grid-column: 1 / span 2;
+    }
+    .contact-form-box {
+        justify-self: end;
+    }
+    #message {
+        justify-self: start;
+    }
+    .send {
+        justify-self: start;
+        transform: translateX(100px)
+    }
+}
+
+@media only screen and (max-width: 568px) {
+    .contact-grid {
+        display: block;
+        text-align: center;
+    }
+    .contact-grid-middle {
+        margin-top: 3rem
+    }
+    .contact-grid-right {
+        margin-top: -2rem;
+        margin-bottom: 18rem;
+    }
+    .contact-grid-form {
+        display: block;
+    }
+    .contact-form-box {
+        position: relative;
+        left: 0; 
+        right: 0; 
+        margin: .75rem auto;
+    }
+    .contact-form-input {
+        width: 100% !important
+    }
+    #message textarea {
+        width: 100% !important;
+        height: 8rem
+    }
+    .send {
+        height: 3rem;
+        position: absolute;
+        right: 50%;
+        transform: translateX(50%)
+    }
+    .newsletter {
+        margin-left: -2rem;
+    }
 }
