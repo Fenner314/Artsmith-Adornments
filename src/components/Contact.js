@@ -22,10 +22,22 @@ export default function Contact() {
                 <div className="contact-grid-right">
                     <div></div>
                     <div className="contact-grid-form">
-                        <input className="contact-form-input" type="text" placeholder="Name" name="name" aria-label="name" />
-                        <input className="contact-form-input" type="text" placeholder="Email Address" name="email address" aria-label="email address" />
-                        <input className="contact-form-input" type="text" placeholder="Subject" name="subject" aria-label="subject" />
-                        <textarea className="contact-form-input" id="message" placeholder="Message" name="message" aria-label="message" />
+                        <div className="contact-form-box">
+                            <input className="contact-form-input" type="text" placeholder="Name" name="name" aria-label="name" />
+                            <span className="underline"></span>
+                        </div>
+                        <div className="contact-form-box">
+                            <input className="contact-form-input" type="text" placeholder="Email Address" name="email address" aria-label="email address" />
+                            <span className="underline"></span>
+                        </div>
+                        <div className="contact-form-box">
+                            <input className="contact-form-input" type="text" placeholder="Subject" name="subject" aria-label="subject" />
+                            <span className="underline"></span>
+                        </div>
+                        <div className="contact-form-box" id="message">
+                            <textarea className="contact-form-input" id="message" placeholder="Message" name="message" aria-label="message" />
+                            <span className="underline"></span>
+                        </div>
                         {/* <button className="send" type="submit" value="Send" >Send</button> */}
                         <div className="send">
                             <span className="bg"></span>
@@ -44,3 +56,4 @@ export default function Contact() {
         </div>
     )
 }
+

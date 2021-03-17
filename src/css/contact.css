@@ -31,9 +31,30 @@
     column-gap: .75rem;
 }
 
+.contact-form-box {
+    position: relative;
+}
+
 .contact-grid-form input {
     width: 250px;
     height: 3rem;
+}
+.contact-grid-form input:focus {
+    outline: none;
+}
+
+.underline {
+    display: block;
+    border-bottom: 1px solid var(--mainYellow);
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    
+    transition: width .5s ease-out;
+}
+
+.contact-grid-form input:focus + span {
+    width: 100%;
 }
 
 .contact-form-input {
@@ -46,6 +67,13 @@
     width: 250px;
     grid-column: 2 / span 1;
     grid-row: 1 / span 3;
+    height: 100%;
+}
+#message:focus {
+    outline: none;
+}
+#message:focus + span {
+    width: 100%;
 }
 
 .send {
