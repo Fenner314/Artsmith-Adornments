@@ -7,13 +7,15 @@ export default function Contact() {
         <div className="contact">
             <div className="contact-grid">
                 <div className="contact-grid-left">
-                    <img src={fullLogo} width="250px" alt="store" style={{marginTop: '-4.5rem', marginBottom: '-4.5rem'}}/>
+                    <h5>Information</h5>
+                    <div></div>
                     <p>Privacy Policy</p>
                     <p>Refund Policy</p>
                     <p>Sizing Chart</p>
                 </div>
                 <div className="contact-grid-middle">
-                    <h1>Contact Us</h1>
+                    <h5>Contact Me</h5>
+                    <div></div>
                     <p>Aberdeen, SD 57401</p>
                     <p>(605) 380-3352</p>
                 </div>
@@ -24,6 +26,12 @@ export default function Contact() {
                         <input className="contact-form-input" type="text" placeholder="Email Address" name="email address" aria-label="email address" />
                         <input className="contact-form-input" type="text" placeholder="Subject" name="subject" aria-label="subject" />
                         <textarea className="contact-form-input" id="message" placeholder="Message" name="message" aria-label="message" />
+                        {/* <button className="send" type="submit" value="Send" >Send</button> */}
+                        <div className="send">
+                            <span className="bg"></span>
+                            <span className="border"></span>
+                            <span className="text">Send</span>
+                        </div>
                     </div>
                 </div>
             </div>

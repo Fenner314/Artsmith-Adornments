@@ -3,8 +3,9 @@
     font-family: 'Source Sans Pro', sans-serif;
 }
 
-.contact h1 {
+.contact h5 {
     font-family: 'Playfair Display', Times, serif;
+    font-weight: 700;
 }
 
 .contact-grid {
@@ -14,30 +15,17 @@
     padding-bottom: 0;
 }
 
-.contact-grid-left {
-    display: grid;
-    grid-template-rows: 2fr repeat(3, 1fr);
-}
-
-.contact-grid-middle {
-    display: grid;
-    grid-template-rows: 2fr repeat(3, 1fr);
-}
-
+.contact-grid-left,
+.contact-grid-middle,
 .contact-grid-right {
     display: grid;
-    grid-template-rows: 2fr 3fr;
-}
-
-.contact-grid-middle h1 {
-    display: grid;
-    align-items: flex-end;
+    grid-template-rows: repeat(5, 40px);
 }
 
 .contact-grid-form {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
     height: fit-content;
     row-gap: .75rem;
     column-gap: .75rem;
@@ -55,11 +43,54 @@
 
 #message {
     resize: none;
-    /* height: 93%; */
     width: 250px;
-    /* margin: .25rem; */
     grid-column: 2 / span 1;
     grid-row: 1 / span 3;
+}
+
+.send {
+    grid-column: 2 / span 1;
+    width: 40%;
+    justify-self: end;
+    color: var(--mainYellow);
+    background: transparent;
+    position: relative;
+    text-align: center;
+    line-height: 50px;
+    text-decoration: none;
+    /* display: block; */
+    overflow: hidden;
+}
+.bg {
+    left: -5%;
+    position: absolute;
+    background-color: var(--mainYellow);
+    width: 0;
+    height: 100%;
+    z-index: 3;
+
+    transition: all .5s ease-out;
+    transform: skewX(-10deg)
+}
+.text {
+    z-index: 4;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border: 1px solid var(--mainYellow);
+
+    transition: color .5s ease-out;
+}
+.send:hover {
+    cursor: pointer;
+}
+.send:hover .text {
+    color: black;
+}
+.send:hover .bg {
+    width: 120%;
 }
 
 .newsletter {
@@ -75,7 +106,12 @@
     border: none;
     border-bottom: 1px solid black;
     padding: .2rem 1rem;
-    color: var(--mainYellow)
+    color: var(--mainYellow);
+
+    transition: color .5s ease-out;
+}
+.newsletter button:hover {
+    color: black;
 }
 
 #newsletter {
