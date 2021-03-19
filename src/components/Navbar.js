@@ -1,38 +1,38 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import { Link, useHistory, NavLink } from 'react-router-dom';
 import fullLogo from '../utilities/fullLogo.svg';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function Navbar() {
+    const currentRoute = useHistory().location.pathname.toLowerCase();
+
     return (
         <div className="navbar">
             <div className="logo">
-                <Link to="/">
+                <Link to="/home">
                     <img src={fullLogo} width="48px" alt="store" className="navbar-brand" />
                 </Link>
             </div>
             <ul className="nav-links">
-                <li className="nav-item d-none">
-                </li>
                 <li className="nav-item">
-                    <Link to="/" className="link">
+                    <NavLink to="/home" className={"link"} activeClassName="active">
                         Home
-                    </Link>
+                    </NavLink>
                 </li>
                 <li className="nav-item">
-                    <Link to="/jewelry" className="link">
+                    <NavLink to="/jewelry" className={"link"} activeClassName="active">
                         Jewelry
-                    </Link>
+                    </NavLink>
                 </li>
                 <li className="nav-item" >
-                    <Link to="/engraving_repair" className="link">
+                    <NavLink to="/engraving_repair" className={"link"} activeClassName="active">
                         Engraving/Repair
-                    </Link>
+                    </NavLink>
                 </li>
                 <li className="nav-item">
-                    <Link to="/other_projects" className="link">
+                    <NavLink to="/other_projects" className={"link"} activeClassName="active">
                         Other Projects
-                    </Link>
+                    </NavLink>
                 </li>
                 <li className="nav-item">
                     Contact Me

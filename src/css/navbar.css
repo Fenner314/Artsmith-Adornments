@@ -45,6 +45,9 @@
     text-decoration: none;
     color: var(--mainYellow)
 }
+.active {
+    color: var(--mainYellow)
+}
 
 .right-links {
     display: flex;
