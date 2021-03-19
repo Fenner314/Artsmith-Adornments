@@ -6,6 +6,9 @@ import Home from './components/Home';
 import JewelryList from './components/JewelryList';
 import EngravingRepair from './components/EngravingRepair';
 import OtherProjectsList from './components/OtherProjectsList';
+import PrivacyPolicy from './components/PrivacyPolicy';
+import RefundPolicy from './components/RefundPolicy';
+import SizingChart from './components/SizingChart';
 import Contact from './components/Contact';
 
 function App() {
@@ -20,6 +23,9 @@ function App() {
           <Route path="/jewelry" component={JewelryList} />
           <Route path="/engraving_repair" component={EngravingRepair} />
           <Route path="/other_projects" component={OtherProjectsList} />
+          <Route path="/privacy_policy" component={PrivacyPolicy} />
+          <Route path="/refund_policy" component={RefundPolicy} />
+          <Route path="/sizing_chart" component={SizingChart} />
         </Switch>
         <Contact />
       </div>

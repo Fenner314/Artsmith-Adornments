@@ -37,6 +37,15 @@
     font-size: 1.1rem;
 }
 
+.link {
+    color: black;
+    transition: color .3s ease-in-out;
+}
+.link:hover {
+    text-decoration: none;
+    color: var(--mainYellow)
+}
+
 .right-links {
     display: flex;
     position: absolute;

@@ -1,31 +1,38 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import fullLogo from '../fullLogo.svg';
+import fullLogo from '../utilities/fullLogo.svg';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-import bag from '../bag.png';
-
 
 export default function Navbar() {
     return (
         <div className="navbar">
             <div className="logo">
-                <img src={fullLogo} width="48px" alt="store" className="navbar-brand" />
+                <Link to="/">
+                    <img src={fullLogo} width="48px" alt="store" className="navbar-brand" />
+                </Link>
             </div>
             <ul className="nav-links">
                 <li className="nav-item d-none">
                 </li>
                 <li className="nav-item">
-                    Home
+                    <Link to="/" className="link">
+                        Home
+                    </Link>
                 </li>
                 <li className="nav-item">
-                    Jewelry
+                    <Link to="/jewelry" className="link">
+                        Jewelry
+                    </Link>
+                </li>
+                <li className="nav-item" >
+                    <Link to="/engraving_repair" className="link">
+                        Engraving/Repair
+                    </Link>
                 </li>
                 <li className="nav-item">
-                    Engraving/Repair
-                </li>
-                <li className="nav-item">
-                    Other Projects
+                    <Link to="/other_projects" className="link">
+                        Other Projects
+                    </Link>
                 </li>
                 <li className="nav-item">
                     Contact Me

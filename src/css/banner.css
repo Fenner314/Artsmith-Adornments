@@ -4,7 +4,7 @@
     background-color: var(--mainWhite);
     display: flex;
     justify-content: flex-start;
-    background-image: url('../banner1cropped.jpg');
+    background-image: url('../utilities/banner1.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: left;

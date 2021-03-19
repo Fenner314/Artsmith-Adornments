@@ -1,5 +1,5 @@
 import React from 'react';
-import fullLogo from '../fullLogo.svg';
+import {Link} from 'react-router-dom';
 import Copyright from './Copyright';
 
 export default function Contact() {
@@ -9,9 +9,15 @@ export default function Contact() {
                 <div className="contact-grid-left">
                     <h5>Information</h5>
                     <div></div>
-                    <p>Privacy Policy</p>
-                    <p>Refund Policy</p>
-                    <p>Sizing Chart</p>
+                    <Link to="/privacy_policy" className="link">
+                        <p>Privacy Policy</p>
+                    </Link>
+                    <Link to="/refund_policy" className="link">
+                        <p>Refund Policy</p>
+                    </Link>
+                    <Link to="/sizing_chart" className="link">
+                        <p>Sizing Chart</p>
+                    </Link>
                 </div>
                 <div className="contact-grid-middle">
                     <h5>Contact Me</h5>
