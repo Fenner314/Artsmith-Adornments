@@ -140,6 +140,7 @@
     border-bottom: 1px solid black;
     padding: .2rem 1rem;
     color: var(--mainYellow);
+    background: transparent;
 
     transition: color .5s ease-out;
 }

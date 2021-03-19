@@ -4,7 +4,7 @@ import { categories } from '../App';
 
 export default function ProductCategories() {
     return (
-        <div>
+        <div className="product-categories-row">
             {categories.map(category => {
                 return (
                     <ProductCategory key={category.id} {...category} />

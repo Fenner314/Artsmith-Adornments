@@ -1,13 +1,16 @@
 @import './navbar.css';
 @import './banner.css';
-@import './copyright.css';
+@import './productCategories.css';
+@import './productCategory.css';
 @import './contact.css';
+@import './copyright.css';
 
 :root {
     --mainYellow: #d18f14;
-    --mainWhite: rgb(240, 240, 240);
+    --mainWhite: rgb(247, 247, 247);
     --offWhite: rgb(233, 233, 233);
-  }  
+    --whiteOverlay: rgba(247, 247, 247, 0.3)
+}  
 
 *, *::before, *::after {
     margin: 0;

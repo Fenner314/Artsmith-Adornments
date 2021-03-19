@@ -1,0 +1,6 @@
+.product-categories-row {
+    display: flex;
+    justify-content: space-around;
+    padding: 4rem;
+    flex-wrap: wrap;
+}

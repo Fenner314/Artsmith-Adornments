@@ -1,9 +1,11 @@
-import logo from './logo.svg';
 import './css/App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {Switch, Route} from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Banner from './components/Banner';
-import ProductCategories from './components/ProductCategories';
+import Home from './components/Home';
+import JewelryList from './components/JewelryList';
+import EngravingRepair from './components/EngravingRepair';
+import OtherProjectsList from './components/OtherProjectsList';
 import Contact from './components/Contact';
 
 function App() {
@@ -13,8 +15,12 @@ function App() {
         <Navbar />
       </div>
       <div className="content">
-        <Banner />
-        <ProductCategories />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/jewelry" component={JewelryList} />
+          <Route path="/engraving_repair" component={EngravingRepair} />
+          <Route path="/other_projects" component={OtherProjectsList} />
+        </Switch>
         <Contact />
       </div>
     </div>
