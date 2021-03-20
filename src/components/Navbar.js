@@ -47,27 +47,27 @@ export default function Navbar() {
                 menu && menuButton ? "translate-100" : "translate-0"
             )}>
                 <span className={menuButton ? "nav-links-menu-close" : "d-none"} onClick={handleMenuToggle}>&times;</span>
-                <li className="nav-item">
+                <li className="nav-item" onClick={handleMenuToggle}>
                     <NavLink exact to="/" className={"link"} activeClassName="active">
                         Home
                     </NavLink>
                 </li>
-                <li className="nav-item">
+                <li className="nav-item" onClick={handleMenuToggle}>
                     <NavLink to="/jewelry" className={"link"} activeClassName="active">
                         Jewelry
                     </NavLink>
                 </li>
-                <li className="nav-item" >
+                <li className="nav-item" onClick={handleMenuToggle}>
                     <NavLink to="/engraving_repair" className={"link"} activeClassName="active">
                         Engraving/Repair
                     </NavLink>
                 </li>
-                <li className="nav-item">
+                <li className="nav-item" onClick={handleMenuToggle}>
                     <NavLink to="/other_projects" className={"link"} activeClassName="active">
                         Other Projects
                     </NavLink>
                 </li>
-                <li className="nav-item link">
+                <li className="nav-item link" onClick={handleMenuToggle}>
                     Contact Me
                 </li>
             </ul>
@@ -88,6 +88,13 @@ export default function Navbar() {
                     <div className="line3"></div>
                 </div>
             </ul>
+            <div 
+                className={cx(
+                    menu ? "nav-overlay-inactive" : "nav-overlay-active",
+                    !menuButton ? "nav-overlay-inactive" : ""
+                    )} 
+                onClick={handleMenuToggle}>
+            </div>
         </div>
     )
 }

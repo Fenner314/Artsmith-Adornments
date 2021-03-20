@@ -160,3 +160,26 @@
     width: 20px
 }
 
+.nav-overlay-active {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 99;
+
+    transition: all .5s ease-in-out
+}
+.nav-overlay-inactive {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0);
+    z-index: 99;
+    visibility: hidden;
+
+    transition: all .5s ease-in-out
+}
