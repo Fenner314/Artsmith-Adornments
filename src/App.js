@@ -10,6 +10,7 @@ import PrivacyPolicy from './components/PrivacyPolicy';
 import RefundPolicy from './components/RefundPolicy';
 import SizingChart from './components/SizingChart';
 import Contact from './components/Contact';
+import Cart from './components/Cart';
 
 function App() {
   return (
@@ -19,13 +20,14 @@ function App() {
       </div>
       <div className="content">
         <Switch>
-          <Route path="/home" component={Home} />
+          <Route exact path="/" component={Home} />
           <Route path="/jewelry" component={JewelryList} />
           <Route path="/engraving_repair" component={EngravingRepair} />
           <Route path="/other_projects" component={OtherProjectsList} />
           <Route path="/privacy_policy" component={PrivacyPolicy} />
           <Route path="/refund_policy" component={RefundPolicy} />
           <Route path="/sizing_chart" component={SizingChart} />
+          <Route path="/cart" component={Cart} />
         </Switch>
         <Contact />
       </div>

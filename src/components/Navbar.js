@@ -1,21 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useHistory, NavLink } from 'react-router-dom';
 import fullLogo from '../utilities/fullLogo.svg';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function Navbar() {
-    const currentRoute = useHistory().location.pathname.toLowerCase();
+    const [nav, setNav] = useState(false);
+    const [menu, setMenu] = useState(false);
+
+    const changeNavHeight = () => {
+        window.scrollY >= 105 ? setNav(true) : setNav(false)
+    }
+
+    const addMenuButton = () => {
+        window.innerWidth < 1200 ? setMenu(true) : setMenu(false)
+    }
+
+    window.addEventListener('scroll', changeNavHeight);
+    window.addEventListener('resize', addMenuButton);
+    window.addEventListener('load', addMenuButton);
 
     return (
         <div className="navbar">
             <div className="logo">
-                <Link to="/home">
-                    <img src={fullLogo} width="48px" alt="store" className="navbar-brand" />
+                <Link exact to="/">
+                    <img src={fullLogo} width="48px" alt="store" className={nav ? "navbar-brand nav-scroll" : "navbar-brand"} />
                 </Link>
             </div>
             <ul className="nav-links">
                 <li className="nav-item">
-                    <NavLink to="/home" className={"link"} activeClassName="active">
+                    <NavLink exact to="/" className={"link"} activeClassName="active">
                         Home
                     </NavLink>
                 </li>
@@ -34,16 +47,25 @@ export default function Navbar() {
                         Other Projects
                     </NavLink>
                 </li>
-                <li className="nav-item">
+                <li className="nav-item link">
                     Contact Me
                 </li>
             </ul>
             <ul className="right-links">
-                <i className="fab fa-facebook right-link-item"/>
+                <a href="https://www.facebook.com/artsmithadornments" target="_blank" rel="noreferrer">
+                    <i className="fab fa-facebook right-link-item"/>
+                </a>
                 <i className="far fa-user-circle right-link-item"/>
-                <div className="cart">
-                    <i className="fas fa-shopping-bag right-link-item" id="shopping-bag" />
-                    <div className="cart-total">0</div>
+                <Link to="/cart">
+                    <div className="cart">
+                        <i className="fas fa-shopping-bag right-link-item" id="shopping-bag" />
+                        <div className="cart-total">0</div>
+                    </div>
+                </Link>
+                <div className={menu ? "burger" : "burger d-none"}>
+                    <div className="line1"></div>
+                    <div className="line2"></div>
+                    <div className="line3"></div>
                 </div>
             </ul>
         </div>

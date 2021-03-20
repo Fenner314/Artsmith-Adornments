@@ -81,7 +81,7 @@
     width: 100%;
 }
 
-.send {
+.button {
     grid-column: 2 / span 1;
     width: 100px;
     justify-self: end;
@@ -116,13 +116,13 @@
 
     transition: color .5s ease-out;
 }
-.send:hover {
+.button:hover {
     cursor: pointer;
 }
-.send:hover .text {
+.button:hover .text {
     color: black;
 }
-.send:hover .bg {
+.button:hover .bg {
     width: 120%;
 }
 
@@ -174,7 +174,7 @@
     #message {
         justify-self: start;
     }
-    .send {
+    .button {
         justify-self: start;
         transform: translateX(100px)
     }
@@ -208,7 +208,7 @@
         width: 100% !important;
         height: 8rem
     }
-    .send {
+    .button {
         height: 3rem;
         position: absolute;
         right: 50%;

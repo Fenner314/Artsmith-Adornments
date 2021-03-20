@@ -6,8 +6,8 @@
     top: 0;
     align-items: center;
     justify-content: space-between;
-    padding: 2rem 0;
-    height: 105px;
+    padding: 0rem 0;
+    /* height: 105px; */
     font-family: 'Source Sans Pro', sans-serif;
 }
 
@@ -20,6 +20,11 @@
 .navbar-brand {
     width: 175px;
     margin: -3rem 0;
+    transition: all .3s ease-out
+}
+.nav-scroll {
+    width: 175px;
+    margin: -4rem 0;
 }
 
 .nav-links {
@@ -39,10 +44,12 @@
 
 .link {
     color: black;
+    text-decoration: none;
     transition: color .3s ease-in-out;
 }
 .link:hover {
     text-decoration: none;
+    cursor: pointer;
     color: var(--mainYellow)
 }
 .active {
@@ -55,11 +62,17 @@
     right: 0;
     margin-right: 3rem;
     margin-bottom: 0;
+    align-items: center;
 }
 
 .right-link-item {
     margin: .5rem;
     font-size: 1.75rem;
+    color: black;
+}
+
+.cart {
+    position: relative;
 }
 
 #shopping-bag {
@@ -80,5 +93,33 @@
     width: 1.25rem;
     height: 1.25rem;
     border-radius: 50%;
-
 }
+
+.burger {
+    cursor: pointer;
+    margin-left: 2rem;
+}
+
+.d-none {
+    display: none;
+}
+.d-block {
+    display: block;
+}
+
+.burger div {
+    width: 28px;
+    height: 2px;
+    background-color: black;
+    z-index: 4;
+    margin: 7px;
+    transition: all .5s ease-in-out;
+}
+.burger:hover  div {
+    background-color: var(--mainYellow)
+}
+.burger:hover .line1,
+.burger:hover .line3 {
+    width: 20px
+}
+
