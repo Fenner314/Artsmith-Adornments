@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
-import { Link, useHistory, NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import fullLogo from '../utilities/fullLogo.svg';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import cx from 'classnames';
 
 export default function Navbar() {
     const [nav, setNav] = useState(false);
+    const [menuButton, setMenuButton] = useState(false);
     const [menu, setMenu] = useState(false);
 
     const changeNavHeight = () => {
@@ -12,12 +14,26 @@ export default function Navbar() {
     }
 
     const addMenuButton = () => {
+        window.innerWidth < 1200 ? setMenuButton(true) : setMenuButton(false)
+    }
+
+    const handleResizeMenu = () => {
         window.innerWidth < 1200 ? setMenu(true) : setMenu(false)
     }
 
+    const handleMenuToggle = () => {
+        menu ? setMenu(false) : setMenu(true);
+    }
+
     window.addEventListener('scroll', changeNavHeight);
-    window.addEventListener('resize', addMenuButton);
-    window.addEventListener('load', addMenuButton);
+    window.addEventListener('resize', () => {
+        addMenuButton();
+        handleResizeMenu();
+    });
+    window.addEventListener('load', () => {
+        addMenuButton();
+        handleResizeMenu();
+    });
 
     return (
         <div className="navbar">
@@ -26,7 +42,11 @@ export default function Navbar() {
                     <img src={fullLogo} width="48px" alt="store" className={nav ? "navbar-brand nav-scroll" : "navbar-brand"} />
                 </Link>
             </div>
-            <ul className="nav-links">
+            <ul className={cx(
+                menuButton ? "nav-links-menu" : "nav-links-top",
+                menu && menuButton ? "translate-100" : "translate-0"
+            )}>
+                <span className={menuButton ? "nav-links-menu-close" : "d-none"} onClick={handleMenuToggle}>&times;</span>
                 <li className="nav-item">
                     <NavLink exact to="/" className={"link"} activeClassName="active">
                         Home
@@ -62,7 +82,7 @@ export default function Navbar() {
                         <div className="cart-total">0</div>
                     </div>
                 </Link>
-                <div className={menu ? "burger" : "burger d-none"}>
+                <div className={menuButton ? "burger" : "burger d-none"} onClick={handleMenuToggle}>
                     <div className="line1"></div>
                     <div className="line2"></div>
                     <div className="line3"></div>
