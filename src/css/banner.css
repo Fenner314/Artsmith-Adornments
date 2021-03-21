@@ -29,10 +29,34 @@
     font-weight: lighter;
 }
 
-.banner-image {
-    width: 40rem;
-}
-
 .margin-2 {
     margin: 1.25rem
+}
+
+@media only screen and (max-width: 800px) {
+    .banner {
+        height: 70vh
+    }
+    .banner-text h1 {
+        font-size: 3rem;
+    }
+    .banner-text p {
+        font-size: 1.1rem;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .banner {
+        height: 50vh
+    }
+    .banner-text {
+        margin-left: 1rem
+    }
+    .banner-text h1 {
+        font-size: 2rem;
+        word-spacing: 500px;
+    }
+    .banner-text p {
+        font-size: .75rem;
+    }
 }
