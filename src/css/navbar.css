@@ -58,6 +58,10 @@
     transform: translateX(100%);
 }
 
+.large-screen-d-none {
+    display: none;
+}
+
 .nav-links-menu-close {
     position: absolute;
     right: 0;
@@ -182,4 +186,27 @@
     visibility: hidden;
 
     transition: all .5s ease-in-out
+}
+
+@media only screen and (max-width: 550px) {
+    .navbar-brand {
+        position: relative;
+        right: 50px;
+    }
+    .right-links {
+        right: -60px
+    }
+    .burger {
+        position: relative;
+        right: 20px
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .small-screen-d-none {
+        display: none;
+    }
+    .large-screen-d-none {
+        display: flex
+    }
 }

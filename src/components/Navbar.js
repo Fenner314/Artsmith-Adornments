@@ -70,12 +70,18 @@ export default function Navbar() {
                 <li className="nav-item link" onClick={handleMenuToggle}>
                     Contact Me
                 </li>
+                <li className="nav-item large-screen-d-none">
+                    <a href="https://www.facebook.com/artsmithadornments" target="_blank" rel="noreferrer">
+                        <i className="fab fa-facebook right-link-item"/>
+                    </a>
+                    <i className="far fa-user-circle right-link-item"/>
+                </li>
             </ul>
             <ul className="right-links">
                 <a href="https://www.facebook.com/artsmithadornments" target="_blank" rel="noreferrer">
-                    <i className="fab fa-facebook right-link-item"/>
+                    <i className="fab fa-facebook right-link-item small-screen-d-none"/>
                 </a>
-                <i className="far fa-user-circle right-link-item"/>
+                <i className="far fa-user-circle right-link-item small-screen-d-none"/>
                 <Link to="/cart">
                     <div className="cart">
                         <i className="fas fa-shopping-bag right-link-item" id="shopping-bag" />
