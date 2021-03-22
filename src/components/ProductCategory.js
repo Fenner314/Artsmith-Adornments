@@ -2,7 +2,6 @@ import React from 'react';
 
 export default function ProductCategory(props) {
     const {
-        id, 
         name,
         img,
     } = props

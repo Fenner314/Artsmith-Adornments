@@ -1,0 +1,16 @@
+.jewelry-list-container {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.rings-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rings-row {
+    display: flex;
+    flex-wrap: wrap;
+}

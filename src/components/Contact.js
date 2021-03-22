@@ -6,7 +6,7 @@ import Copyright from './Copyright';
 
 export default function Contact() {
     return (
-        <div className="contact">
+        <div className="contact" id="contact">
             <div className="contact-grid">
                 <div className="contact-grid-left">
                     <h5>Information</h5>

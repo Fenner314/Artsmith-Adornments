@@ -3,6 +3,8 @@ import { Link, NavLink } from 'react-router-dom';
 import fullLogo from '../utilities/fullLogo.svg';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import cx from 'classnames';
+// import { Link as linkScroll } from "react-scroll";
+
 
 export default function Navbar() {
     const [nav, setNav] = useState(false);
@@ -68,7 +70,7 @@ export default function Navbar() {
                     </NavLink>
                 </li>
                 <li className="nav-item link" onClick={handleMenuToggle}>
-                    Contact Me
+                    <a className="link" href="#contact">Contact Me</a>
                 </li>
                 <li className="nav-item large-screen-d-none">
                     <a href="https://www.facebook.com/artsmithadornments" target="_blank" rel="noreferrer">

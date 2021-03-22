@@ -35,31 +35,5 @@ function App() {
   );
 }
 
-export const categories = [
-  {
-    id: 1,
-    name: 'Rings',
-    img: "img/ring.jpg",
-    price: 50
-  },
-  {
-    id: 2,
-    name: 'Bracelets',
-    img: "img/bracelet.jpg",
-    price: 50
-  },
-  {
-    id: 3,
-    name: 'Earrings',
-    img: "img/earrings.jpg",
-    price: 50
-  },
-  {
-    id: 4,
-    name: 'Necklaces',
-    img: "img/necklace.jpg",
-    price: 50
-  },
-]
 
 export default App;

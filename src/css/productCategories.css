@@ -1,6 +1,17 @@
-.product-categories-row {
+.product-categories-container {
     display: flex;
-    justify-content: space-around;
-    padding: 4rem;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 4rem;
+}
+
+.product-categories-container h1 {
+    font-family: 'Playfair Display', Times, serif;
+}
+
+.product-categories-row {
+display: flex;
+justify-content: space-around;
+padding: 4rem;
+flex-wrap: wrap;
 }
