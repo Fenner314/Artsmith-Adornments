@@ -5,13 +5,18 @@
 @import './contact.css';
 @import './button.css';
 @import './jewelryList.css';
+@import './jewelryProduct.css';
+@import './rings.css';
+@import './carousel.css';
+@import './slideControls.css';
 @import './copyright.css';
 
 :root {
     --mainYellow: #d18f14;
     --mainWhite: rgb(247, 247, 247);
     --offWhite: rgb(233, 233, 233);
-    --whiteOverlay: rgba(247, 247, 247, 0.3)
+    --whiteOverlay: rgba(247, 247, 247, 0.15);
+    --mainGray: rgb(87, 87, 87);
 }  
 
 *, *::before, *::after {

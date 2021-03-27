@@ -1,0 +1,10 @@
+.product-card {
+    text-align: center;
+    margin-right: 3.26%;
+    
+    transition: transform .3s ease-in-out .1s;
+}
+
+.product-card-image img {
+    width: 20vw;
+}

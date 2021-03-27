@@ -29,7 +29,7 @@ export const rings = [
     {
         id: 5, 
         name: 'ring1',
-        img: 'img/ring1.jpg',
+        img: 'img/ring5.jpg',
         price: 50,
         description: 'Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics',
         inCart: false,
@@ -39,7 +39,7 @@ export const rings = [
     {
         id: 6, 
         name: 'ring2',
-        img: 'img/ring2.jpg',
+        img: 'img/ring5.jpg',
         price: 50,
         description: 'Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics',
         inCart: false,
@@ -49,7 +49,7 @@ export const rings = [
     {
         id: 7, 
         name: 'ring3',
-        img: 'img/ring3.jpg',
+        img: 'img/ring5.jpg',
         price: 50,
         description: 'Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics',
         inCart: false,
@@ -59,7 +59,7 @@ export const rings = [
     {
         id: 8, 
         name: 'ring4',
-        img: 'img/ring4.jpg',
+        img: 'img/ring5.jpg',
         price: 50,
         description: 'Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics',
         inCart: false,
@@ -79,7 +79,7 @@ export const rings = [
     {
         id: 10, 
         name: 'ring6',
-        img: 'img/ring6.jpg',
+        img: 'img/ring5.jpg',
         price: 50,
         description: 'Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics',
         inCart: false,
@@ -89,7 +89,7 @@ export const rings = [
     {
         id: 11, 
         name: 'ring7',
-        img: 'img/ring7.jpg',
+        img: 'img/ring5.jpg',
         price: 50,
         description: 'Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics',
         inCart: false,
@@ -99,7 +99,7 @@ export const rings = [
     {
         id: 12, 
         name: 'ring8',
-        img: 'img/ring8.jpg',
+        img: 'img/ring5.jpg',
         price: 50,
         description: 'Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics',
         inCart: false,
@@ -109,7 +109,7 @@ export const rings = [
     {
         id: 13, 
         name: 'ring9',
-        img: 'img/ring9.jpg',
+        img: 'img/ring5.jpg',
         price: 50,
         description: 'Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics',
         inCart: false,
@@ -119,7 +119,7 @@ export const rings = [
     {
         id: 14, 
         name: 'ring10',
-        img: 'img/ring10.jpg',
+        img: 'img/ring5.jpg',
         price: 50,
         description: 'Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics',
         inCart: false,
@@ -129,7 +129,7 @@ export const rings = [
     {
         id: 15, 
         name: 'ring11',
-        img: 'img/ring11.jpg',
+        img: 'img/ring5.jpg',
         price: 50,
         description: 'Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics',
         inCart: false,
@@ -139,7 +139,7 @@ export const rings = [
     {
         id: 16, 
         name: 'ring12',
-        img: 'img/ring12.jpg',
+        img: 'img/ring5.jpg',
         price: 50,
         description: 'Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics',
         inCart: false,
@@ -147,3 +147,5 @@ export const rings = [
         total: 0
     },
 ]
+
+export const ringsLength = rings.length;

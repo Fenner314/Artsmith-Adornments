@@ -8,12 +8,12 @@ export default function ProductCategory(props) {
 
     return (
         <div>
-            <div className="category-card">
-                <div className="category-card-image">
+            <div className="product-card">
+                <div className="product-card-image">
                     <div className="overlay"></div>
                     <img src={img} width="250px" alt="product" />
                 </div>
-                <div className="category-card-desc">
+                <div className="product-card-desc">
                     <span>{name}</span>
                 </div>
             </div>

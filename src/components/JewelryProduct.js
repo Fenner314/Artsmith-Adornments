@@ -14,12 +14,13 @@ export default function JewelryProduct(props) {
 
     return (
         <div className="product-card">
-            <div className="product-card-img-container">
-                <img src={img} width="250px" alt="product" />
+            <div className="product-card-image">
+                <div className="overlay"></div>
+                <img src={img} alt="product" />
             </div>
-            <div className="product-card-text">
+            <div className="product-card-desc">
                 <span>{name}</span>
-                <span>{price}</span>
+                <span>Price: ${price}</span>
             </div>
         </div>
     )
