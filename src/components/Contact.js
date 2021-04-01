@@ -46,7 +46,6 @@ export default function Contact() {
                             <textarea id="message" placeholder="Message" name="message" aria-label="message" />
                             <span className="underline"></span>
                         </div>
-                        {/* <Button>Send</Button> */}
                         <div className="button">
                             <span className="bg"></span>
                             <span className="text">Send</span>

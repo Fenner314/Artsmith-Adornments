@@ -212,7 +212,7 @@
         height: 3rem;
         position: absolute;
         right: 50%;
-        transform: translateX(50%)
+        transform: translateX(50%);
     }
     .newsletter {
         margin-left: -2rem;

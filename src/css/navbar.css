@@ -62,17 +62,16 @@
     display: none;
 }
 
-.nav-links-menu-close {
+.menu-close {
     position: absolute;
     right: 0;
     top: 0;
-    margin: 0 1rem;
-    font-size: 3rem;
+    margin: .5rem 1rem;
     cursor: pointer;
 
     transition: all .5s ease-out;
 }
-.nav-links-menu-close:hover {
+.menu-close:hover {
     color: var(--mainYellow);
     transform: rotate(-90deg);
 }

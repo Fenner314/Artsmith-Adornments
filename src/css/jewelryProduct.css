@@ -1,10 +1,112 @@
+/* .card-container {
+    position: relative;
+} */
+
 .product-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    margin-right: 3.26%;
+    margin-right: 2rem;
+    /* margin-right: 3.26%; */
     
-    transition: transform .3s ease-in-out .1s;
+    transition: all .3s ease-in-out;
+}
+.product-card:hover {
+    cursor: pointer;
+    box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, .2);
+}
+.product-card:hover .product-card-desc {
+    color: var(--mainYellow);
+    background: var(--offWhite);
+}
+.product-card:hover img {
+    transform: scale(1.1);
+}
+.product-card:hover .overlay {
+    background-color: var(--whiteOverlay);
+}
+.product-card:hover .cart-btn {
+    opacity: .8;
+    transform: translateY(-1rem)
+}
+
+.product-card-image {
+    overflow: hidden;
+    position: relative;
 }
 
 .product-card-image img {
     width: 20vw;
+    transition: transform .3s ease-in-out;
+}
+
+.cart-btn {
+    position: absolute;
+    width: max-content;
+    bottom: 5rem;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding: .5rem 1rem;
+    background-color: var(--mainWhite);
+    border-radius: 30px;
+    overflow: hidden;
+    opacity: 0;
+    z-index: 20;
+
+    transition: all .3s ease-out, color 50ms ease-out;
+}
+.cart-btn:hover {
+    color: var(--mainWhite)
+}
+.cart-btn:hover .cart-btn-bg {
+    width: 110%;
+}
+
+.cart-btn-bg {
+    left: -5%;
+    top: -10%;
+    position: absolute;
+    background-color: var(--mainYellow);
+    width: 0;
+    height: 200%;
+    z-index: -1;
+
+    transition: all .5s ease-out;
+    transform: skewX(-10deg)
+}
+
+.cart-btn-text {
+    z-index: 4;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    padding: 5rem 1rem;
+
+    transition: color .5s ease-out;
+}
+
+.product-card-desc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all .3s ease-out;
+    font-size: 1.2rem;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 400;
+    width: 100%;
+    padding: 1rem 0
+}
+
+.overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+
+    transition: all .3s ease-in-out;
 }

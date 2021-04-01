@@ -1,14 +1,13 @@
 @import './navbar.css';
 @import './banner.css';
 @import './productCategories.css';
-@import './productCategory.css';
 @import './contact.css';
 @import './button.css';
 @import './jewelryList.css';
 @import './jewelryProduct.css';
-@import './rings.css';
 @import './carousel.css';
 @import './slideControls.css';
+@import './details.css';
 @import './copyright.css';
 
 :root {

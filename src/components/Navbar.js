@@ -48,7 +48,7 @@ export default function Navbar() {
                 menuButton ? "nav-links-menu" : "nav-links-top",
                 menu && menuButton ? "translate-100" : "translate-0"
             )}>
-                <span className={menuButton ? "nav-links-menu-close" : "d-none"} onClick={handleMenuToggle}>&times;</span>
+                <i className={menuButton ? "fas fa-times fa-2x menu-close" : "d-none"} onClick={handleMenuToggle}></i>
                 <li className="nav-item" onClick={handleMenuToggle}>
                     <NavLink exact to="/" className={"link"} activeClassName="active">
                         Home
