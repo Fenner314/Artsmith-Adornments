@@ -51,6 +51,8 @@
     margin: auto;
     padding: .5rem 1rem;
     background-color: var(--mainWhite);
+    color: black;
+    border: none;
     border-radius: 30px;
     overflow: hidden;
     opacity: 0;
@@ -77,6 +79,9 @@
     transition: all .5s ease-out;
     transform: skewX(-10deg)
 }
+.cart-btn-bg-active {
+    width: 110%
+}
 
 .cart-btn-text {
     z-index: 4;
@@ -86,6 +91,9 @@
     padding: 5rem 1rem;
 
     transition: color .5s ease-out;
+}
+.cart-btn-text-active {
+    color: var(--mainWhite);
 }
 
 .product-card-desc {

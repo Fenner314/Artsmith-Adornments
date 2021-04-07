@@ -69,6 +69,9 @@
 .details-btn:hover .details-btn-text {
     color: var(--mainWhite);
 }
+.details-btn-inactive {
+    cursor: initial;
+}
 
 .details-btn-bg {
     position: absolute;
@@ -79,6 +82,9 @@
     transform: skew(-10deg);
 
     transition: all .5s ease-in-out;
+}
+.details-btn-bg-active {
+    width: 100%;
 }
 
 .details-btn-text {
@@ -94,6 +100,9 @@
     border-radius: 30px;
 
     transition: .5s ease-in-out;
+}
+.details-btn-text-active {
+    color: var(--mainWhite);
 }
 
 .details-overlay-active {

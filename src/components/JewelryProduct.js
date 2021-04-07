@@ -10,14 +10,14 @@ export default function JewelryProduct(props) {
         description,
         inCart,
         count,
-        total
-    } = props
+        total,
+    } = props.product
 
-    const { handleDetailsToggle, handleDetail } = useContext(ProductContext)
+    const { handleDetailsToggle, handleDetail, addToCart } = useContext(ProductContext)
 
     return (
         <div className="card-container">
-            <div className="product-card">
+            <div className="product-card" onClick={() => handleDetail(id)}>
                 <div className="product-card-image" onClick={handleDetailsToggle}>
                     <div className="overlay"></div>
                     <img src={img} alt="product" />
@@ -26,10 +26,10 @@ export default function JewelryProduct(props) {
                     <span>{name}</span>
                     <span>Price: ${price}</span>
                 </div>
-                <div className="cart-btn" onClick={() => console.log('Added to cart')}>
-                    <span className="cart-btn-bg"></span>
-                    <span className="cart-btn-text">{inCart ? "Added To Cart" : "Add To Cart"}</span>
-                </div>
+                <button className="cart-btn" disabled={inCart ? true : false} onClick={() => inCart ? console.log('no') : addToCart(id)}>
+                    <span className={inCart ? "cart-btn-bg cart-btn-bg-active" : "cart-btn-bg"}></span>
+                    <span className={inCart ? "cart-btn-text cart-btn-text-active" : "cart-btn-text"}>{inCart ? "Added To Cart" : "Add To Cart"}</span>
+                </button>
             </div>
         </div>
     )

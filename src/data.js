@@ -27,13 +27,15 @@ export const categories = [
 
 export const productDetails = {
     id: 5, 
-        name: 'ring1',
-        img: 'img/ring5.jpg',
-        price: 50,
-        description: 'Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics',
-        inCart: false,
-        count: 0,
-        total: 0
+    name: 'ring1',
+    img: 'img/ring5.jpg',
+    price: 50,
+    available: true,
+    description: 'Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics',
+    size: 'small',
+    inCart: false,
+    count: 0,
+    total: 0
 }
 
 export const products = [
@@ -45,6 +47,7 @@ export const products = [
         img: 'img/ring5.jpg',
         price: 50,
         description: 'Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics',
+        size: 'small',
         inCart: false,
         count: 0,
         total: 0
@@ -56,6 +59,7 @@ export const products = [
         img: 'img/ring5.jpg',
         price: 50,
         description: 'Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics',
+        size: 'small',
         inCart: false,
         count: 0,
         total: 0
@@ -67,6 +71,7 @@ export const products = [
         img: 'img/ring5.jpg',
         price: 50,
         description: 'Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics',
+        size: 'small',
         inCart: false,
         count: 0,
         total: 0
@@ -78,6 +83,7 @@ export const products = [
         img: 'img/ring5.jpg',
         price: 50,
         description: 'Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics',
+        size: 'small',
         inCart: false,
         count: 0,
         total: 0
@@ -89,6 +95,7 @@ export const products = [
         img: 'img/ring5.jpg',
         price: 50,
         description: 'Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics',
+        size: 'small',
         inCart: false,
         count: 0,
         total: 0
@@ -100,6 +107,7 @@ export const products = [
         img: 'img/ring5.jpg',
         price: 50,
         description: 'Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics',
+        size: 'small',
         inCart: false,
         count: 0,
         total: 0
@@ -111,6 +119,7 @@ export const products = [
         img: 'img/ring5.jpg',
         price: 50,
         description: 'Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics',
+        size: 'small',
         inCart: false,
         count: 0,
         total: 0
@@ -122,6 +131,7 @@ export const products = [
         img: 'img/ring5.jpg',
         price: 50,
         description: 'Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics',
+        size: 'small',
         inCart: false,
         count: 0,
         total: 0
@@ -133,6 +143,7 @@ export const products = [
         img: 'img/ring5.jpg',
         price: 50,
         description: 'Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics',
+        size: 'small',
         inCart: false,
         count: 0,
         total: 0
@@ -144,6 +155,7 @@ export const products = [
         img: 'img/ring5.jpg',
         price: 50,
         description: 'Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics',
+        size: 'small',
         inCart: false,
         count: 0,
         total: 0
@@ -155,6 +167,7 @@ export const products = [
         img: 'img/ring5.jpg',
         price: 50,
         description: 'Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics',
+        size: 'small',
         inCart: false,
         count: 0,
         total: 0
@@ -166,6 +179,7 @@ export const products = [
         img: 'img/ring5.jpg',
         price: 50,
         description: 'Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics',
+        size: 'small',
         inCart: false,
         count: 0,
         total: 0
@@ -178,6 +192,7 @@ export const products = [
         img: 'img/necklace1.jpg',
         price: 30,
         description: 'Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics',
+        size: 'small',
         inCart: false,
         count: 0,
         total: 0
@@ -189,6 +204,7 @@ export const products = [
         img: 'img/necklace1.jpg',
         price: 30,
         description: 'Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics',
+        size: 'small',
         inCart: false,
         count: 0,
         total: 0
@@ -200,6 +216,7 @@ export const products = [
         img: 'img/necklace1.jpg',
         price: 30,
         description: 'Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics',
+        size: 'small',
         inCart: false,
         count: 0,
         total: 0
@@ -211,6 +228,7 @@ export const products = [
         img: 'img/necklace1.jpg',
         price: 30,
         description: 'Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics',
+        size: 'small',
         inCart: false,
         count: 0,
         total: 0
@@ -222,6 +240,7 @@ export const products = [
         img: 'img/necklace1.jpg',
         price: 30,
         description: 'Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics',
+        size: 'small',
         inCart: false,
         count: 0,
         total: 0
@@ -233,6 +252,7 @@ export const products = [
         img: 'img/necklace1.jpg',
         price: 30,
         description: 'Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics',
+        size: 'small',
         inCart: false,
         count: 0,
         total: 0
@@ -244,6 +264,7 @@ export const products = [
         img: 'img/necklace1.jpg',
         price: 30,
         description: 'Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics',
+        size: 'small',
         inCart: false,
         count: 0,
         total: 0
@@ -256,6 +277,7 @@ export const products = [
         img: '/img/earring1.jpg',
         price: 20,
         description: 'Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics',
+        size: 'small',
         inCart: false,
         count: 0,
         total: 0
@@ -267,6 +289,7 @@ export const products = [
         img: '/img/earring1.jpg',
         price: 20,
         description: 'Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics',
+        size: 'small',
         inCart: false,
         count: 0,
         total: 0
@@ -278,6 +301,7 @@ export const products = [
         img: '/img/earring1.jpg',
         price: 20,
         description: 'Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics',
+        size: 'small',
         inCart: false,
         count: 0,
         total: 0
@@ -289,6 +313,7 @@ export const products = [
         img: '/img/earring1.jpg',
         price: 20,
         description: 'Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics',
+        size: 'small',
         inCart: false,
         count: 0,
         total: 0
@@ -300,6 +325,7 @@ export const products = [
         img: '/img/earring1.jpg',
         price: 20,
         description: 'Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics',
+        size: 'small',
         inCart: false,
         count: 0,
         total: 0
@@ -312,6 +338,7 @@ export const products = [
         img: '/img/bracelet1.jpg',
         price: 35,
         description: 'Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics',
+        size: 'small',
         inCart: false,
         count: 0,
         total: 0
@@ -323,6 +350,7 @@ export const products = [
         img: '/img/bracelet1.jpg',
         price: 35,
         description: 'Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics',
+        size: 'small',
         inCart: false,
         count: 0,
         total: 0
@@ -334,6 +362,7 @@ export const products = [
         img: '/img/bracelet1.jpg',
         price: 35,
         description: 'Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics',
+        size: 'small',
         inCart: false,
         count: 0,
         total: 0
@@ -345,6 +374,7 @@ export const products = [
         img: '/img/bracelet1.jpg',
         price: 35,
         description: 'Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics',
+        size: 'small',
         inCart: false,
         count: 0,
         total: 0
@@ -356,6 +386,7 @@ export const products = [
         img: '/img/bracelet1.jpg',
         price: 35,
         description: 'Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics',
+        size: 'small',
         inCart: false,
         count: 0,
         total: 0

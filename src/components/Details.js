@@ -1,29 +1,40 @@
 import React, { useContext } from 'react';
 import { ProductContext } from '../App';
-import { ProductConsumer } from '../context';
-import { productDetails } from '../data';
 
 export default function Details(props) {
-    const { detailsOpen, handleDetailsToggle } = useContext(ProductContext)
+    const { detailsOpen, handleDetailsToggle, addToCart } = useContext(ProductContext)
+    
+    const {
+        id, 
+        name,
+        img,
+        price,
+        available,
+        description,
+        size,
+        inCart,
+        count,
+        total,
+    } = props.detailProduct
 
     return (
         <>
             <div className={detailsOpen ? "details-container" : "invisible"}>
                 <div className="details-title-row">
-                    <h1>Title</h1>
+                    <h1>{name}</h1>
                     {/* <span className="menu-close-modal" >&times;</span> */}
                     <i class="fas fa-times fa-2x menu-close" onClick={handleDetailsToggle}></i>
                 </div>
                 <div className="details-info-row">
                     <div className="details-info-row-img">
-                        <img src="img/bracelet1.jpg" width="100px" alt="product" />
+                        <img src={img} width="100px" alt="product" />
                     </div>
                     <div className="details-info-row-info">
-                        <h3>Title</h3>
-                        <h5>Price</h5>
-                        <p>Availability</p>
-                        <p>Descrition</p>
-                        <p>Size</p>
+                        <h3>Item Name: {name}</h3>
+                        <h5>Price: ${price}</h5>
+                        <p>{available ? 'Available' : 'Sold-out'}</p>
+                        <p>Description: {description}</p>
+                        <p>Size: {size}</p>
                         {/* <div className="details-info-row-info-cart">
                             <span>Quantity</span>
                             <button className="details-btn">
@@ -33,9 +44,9 @@ export default function Details(props) {
                         </div> */}
                         <div className="details-info-row-info-cart">
                             <p>Quantity</p>
-                            <div className="details-btn">
-                                <span className="details-btn-bg"></span>
-                                <span className="details-btn-text">Add To Cart</span>
+                            <div className={inCart ? "details-btn-inactive details-btn" :"details-btn"} onClick={() => {inCart ? addToCart() : addToCart(id)}}>
+                                <span className={inCart ? "details-btn-bg-active details-btn-bg" : "details-btn-bg"}></span>
+                                <span className={inCart ? "details-btn-text-active details-btn-text" : "details-btn-text"}>{inCart ? 'Added To Cart' : 'Add To Cart'}</span>
                             </div>
                         </div>
                     </div>

@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import fullLogo from '../utilities/fullLogo.svg';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import cx from 'classnames';
+import { ProductContext } from '../App';
 // import { Link as linkScroll } from "react-scroll";
 
 
@@ -10,6 +11,8 @@ export default function Navbar() {
     const [nav, setNav] = useState(false);
     const [menuButton, setMenuButton] = useState(false);
     const [menu, setMenu] = useState(false);
+
+    const { cartLength } = useContext(ProductContext);
 
     const changeNavHeight = () => {
         window.scrollY >= 105 ? setNav(true) : setNav(false)
@@ -87,7 +90,8 @@ export default function Navbar() {
                 <Link to="/cart">
                     <div className="cart">
                         <i className="fas fa-shopping-bag right-link-item" id="shopping-bag" />
-                        <div className="cart-total">0</div>
+                        <div className="cart-total">{cartLength}</div>
+                        {/* <div className="cart-total">{parseInt(cartLength)}</div> */}
                     </div>
                 </Link>
                 <div className={menuButton ? "burger" : "burger d-none"} onClick={handleMenuToggle}>

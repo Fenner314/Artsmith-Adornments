@@ -2,6 +2,7 @@ import React, { useContext, useState, useEffect } from 'react';
 import { products, productDetails } from './data';
 import './css/App.css';
 import {Switch, Route} from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import JewelryList from './components/JewelryList';
@@ -12,32 +13,19 @@ import RefundPolicy from './components/RefundPolicy';
 import SizingChart from './components/SizingChart';
 import Details from './components/Details';
 import Contact from './components/Contact';
-import Cart from './components/Cart';
+import Cart from './components/Cart/Cart';
 
 export const ProductContext = React.createContext();
 
 function App() {
   const [detailsOpen, setDetailsOpen] = useState(false);
-  const [storeProducts, setStoreProducts] = useState();
-  const [detailProduct, setDetailProduct] = useState(productDetails)
-
-  useEffect(() => {
-    handleSetProducts();
-    console.log(products)
-  }, [])
-
-  const handleSetProducts = () => {
-    let tempProducts = [];
-    products.forEach(item => {
-      const singleItem = {...item};
-      tempProducts = [...tempProducts, singleItem];
-    })
-    console.log(tempProducts);
-    setStoreProducts(() => {
-      return tempProducts
-    });
-    console.log(storeProducts);
-  }
+  const [storeProducts, setStoreProducts] = useState(products);
+  const [detailProduct, setDetailProduct] = useState(productDetails);
+  const [cart, setCart] = useState([]);
+  const [cartLength, setCartLength] = useState(0);
+  const [cartSubTotal, setCartSubTotal] = useState(0);
+  const [cartTax, setCartTax] = useState(0);
+  const [cartTotal, setCartTotal] = useState(0);
 
   const getItem = (id) => {
     const product = storeProducts.find(item => item.id === id);
@@ -46,18 +34,118 @@ function App() {
 
   const handleDetail = (id) => {
     const product = getItem(id);
-    setDetailProduct(product)
-    console.log('hello')
+    setDetailProduct(product);
   }
 
   const handleDetailsToggle = () => {
     detailsOpen ? setDetailsOpen(false) : setDetailsOpen(true)
   }
 
+  const addToCart = (id) => {
+    const product = getItem(id);
+    product.inCart = true;
+    product.count = 1;
+    const price = product.price;
+    product.total = price;
+    setCartLength(cartLength + 1)
+
+    setCart([...cart, product])
+    console.log(cart)
+    setTimeout(() => {
+      addTotals()
+    }, 100); 
+  }
+
+  const increment = (id) => {
+    const selectedProduct = cart.find(item => item.id === id);
+    const index = cart.indexOf(selectedProduct);
+    const product = cart[index];
+
+    product.count += 1;
+    product.total = product.count * product.price;
+    setCartLength(cartLength + 1);
+
+    // setCart(() => {
+    //   return [...cart, product]
+    // })
+    setCart([...cart]);
+    console.log(cart)
+    addTotals();
+  }
+
+  const decrement = (id) => {
+    const selectedProduct = cart.find(item => item.id === id);
+    const index = cart.indexOf(selectedProduct);
+    const product = cart[index];
+
+    product.count -= 1;
+    product.total = product.count * product.price;
+
+    setCartLength(cartLength - 1);
+    setCart([...cart]);
+    addTotals();
+  }
+
+  const removeItem = (id) => {
+    let tempProducts = [...products];
+    let tempCart = [...cart];
+
+    tempCart = tempCart.filter(item => item.id !== id);
+
+    const index = tempProducts.indexOf(getItem(id));
+    let removedProduct = tempProducts[index];
+    removedProduct.inCart = false;
+    setCartLength(cartLength - removedProduct.count);
+    removedProduct.count = 0;
+    removedProduct.total = 0;
+
+    setCart([...tempCart]);
+    setStoreProducts([...tempProducts]);
+    addTotals();
+  }
+
+  const clearCart = () => {
+    cart.forEach(item => {
+      item.inCart = false;
+      item.count = 0;
+      item.total = 0;
+    });
+    setCart([]);
+    setCartLength(0);
+    addTotals();
+  }
+
+  const addTotals = () => {
+    let subTotal = 0;
+    cart.map(item => (subTotal += item.total));
+    const tempTax = subTotal * .065;
+    const tax = parseFloat(tempTax.toFixed(2));
+    const total = subTotal + tax;
+    
+    setCartSubTotal(subTotal);
+    setCartTax(tax);
+    setCartTotal(total);
+
+    console.log(cart)
+  }
+
   const productContextValue = {
+    getItem,
     detailsOpen,
+    detailProduct,
+    cart,
+    cartLength,
+    cartSubTotal,
+    cartTax,
+    cartTotal,
     handleDetailsToggle,
-    handleDetail
+    handleDetail,
+    addToCart,
+    increment,
+    decrement,
+    removeItem,
+    clearCart,
+    addTotals,
   }
 
   return (
@@ -77,7 +165,7 @@ function App() {
             <Route path="/sizing_chart" component={SizingChart} />
             <Route path="/cart" component={Cart} />
           </Switch>
-          <Details />
+          <Details {...productDetails} detailProduct={detailProduct} />
           <Contact />
         </div>
       </div>

@@ -1,0 +1,45 @@
+.cart-container {
+    min-height: calc(100vh - 105px);
+}
+
+.cart-columns-container {
+    /* width: 100%;
+    display: flex; */
+}
+
+.cart-columns-row {
+    flex-wrap: nowrap !important;
+}
+
+.cart-columns-item {
+
+}
+
+.btn-basic {
+    border: 1px solid black;
+    background: none;
+    padding: 5px 12px;
+}
+
+.btn-black {
+    cursor: pointer;
+
+    transition: all .3s ease-out;
+}
+.btn-black:hover {
+    color: white;
+    background-color: black;
+}
+
+#no-border {
+    border: none;
+}
+
+.fa-trash {
+    cursor: pointer;
+
+    transition: all .3s ease-out;
+}
+.fa-trash:hover {
+    color: var(--mainYellow)
+}
