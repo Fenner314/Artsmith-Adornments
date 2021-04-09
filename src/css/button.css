@@ -1,0 +1,61 @@
+.button-container {
+    color: var(--mainYellow);
+    /* font-size: different for each render - props */
+    text-decoration: none;
+    position: relative;
+    width: 100%;
+    /* max-width: different for each render - props */
+    /* height: different for each render - props */
+    /* line-height: different for each render - props (same as height) */
+    display: block;
+    text-align: center;
+    border: none;
+    background: none;
+    
+    transition: color .5s ease-in-out;
+}
+.button-container:hover {
+    color: var(--mainWhite);
+}
+.button-container:hover .button-container-bg {
+    width: 120%;
+}
+
+.inner-button-container {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 30px;
+}
+
+.button-container-bg {
+    left: -5%;
+    position: absolute;
+    background-color: var(--mainYellow);
+    width: 0;
+    height: 100%;
+    z-index: 3;
+
+    transform: skewX(-10deg);
+    transition: all .5s ease-in-out
+}
+
+.button-container-base {
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    border: 1px solid var(--mainYellow);
+    border-radius: 30px;
+}
+
+.button-container-text {
+    z-index: 4;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}

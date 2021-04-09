@@ -26,6 +26,10 @@
     box-sizing: border-box;
 }
 
+body {
+    overflow-x: hidden;
+}
+
 .fixed-top {
     position: fixed;
     top: 0;

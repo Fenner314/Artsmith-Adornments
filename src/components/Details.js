@@ -44,7 +44,7 @@ export default function Details(props) {
                         </div> */}
                         <div className="details-info-row-info-cart">
                             <p>Quantity</p>
-                            <div className={inCart ? "details-btn-inactive details-btn" :"details-btn"} onClick={() => {inCart ? addToCart() : addToCart(id)}}>
+                            <div className={inCart ? "details-btn-inactive details-btn" :"details-btn"} onClick={() => {inCart ? console.log('') : addToCart(id)}}>
                                 <span className={inCart ? "details-btn-bg-active details-btn-bg" : "details-btn-bg"}></span>
                                 <span className={inCart ? "details-btn-text-active details-btn-text" : "details-btn-text"}>{inCart ? 'Added To Cart' : 'Add To Cart'}</span>
                             </div>

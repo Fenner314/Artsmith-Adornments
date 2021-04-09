@@ -23,8 +23,8 @@
     transition: all .3s ease-out
 }
 .nav-scroll {
-    width: 175px;
-    margin: -4rem 0;
+    width: 150px;
+    margin: -3rem 0;
 }
 
 .nav-links-top {
@@ -109,6 +109,15 @@
     margin: .5rem;
     font-size: 1.75rem;
     color: black;
+}
+
+.fa-facebook, .fa-user-circle {
+    cursor: pointer;
+
+    transition: all .3s ease-out
+}
+.fa-facebook:hover, .fa-user-circle:hover {
+    color: var(--mainYellow);
 }
 
 .cart {

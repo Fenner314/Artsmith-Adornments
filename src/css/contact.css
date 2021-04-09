@@ -120,7 +120,7 @@
     cursor: pointer;
 }
 .button:hover .text {
-    color: black;
+    color: var(--mainWhite);
 }
 .button:hover .bg {
     width: 120%;

@@ -13,6 +13,7 @@ import RefundPolicy from './components/RefundPolicy';
 import SizingChart from './components/SizingChart';
 import Details from './components/Details';
 import Contact from './components/Contact';
+import Button from './components/Button';
 import Cart from './components/Cart/Cart';
 
 export const ProductContext = React.createContext();
@@ -47,13 +48,13 @@ function App() {
     product.count = 1;
     const price = product.price;
     product.total = price;
-    setCartLength(cartLength + 1)
+    setCartLength(cartLength + 1);
 
-    setCart([...cart, product])
-    console.log(cart)
-    setTimeout(() => {
-      addTotals()
-    }, 100); 
+    setCart(() => {
+      return [...cart, product]
+    }, () => {
+      setTimeout(addTotals(), 100)
+    })
   }
 
   const increment = (id) => {
@@ -125,8 +126,6 @@ function App() {
     setCartSubTotal(subTotal);
     setCartTax(tax);
     setCartTotal(total);
-
-    console.log(cart)
   }
 
   const productContextValue = {
@@ -166,6 +165,7 @@ function App() {
             <Route path="/cart" component={Cart} />
           </Switch>
           <Details {...productDetails} detailProduct={detailProduct} />
+          <Button text={'Add To Cart'} maxWidth={'160px'} height={'40px'} fontSize={'1rem'} />
           <Contact />
         </div>
       </div>
