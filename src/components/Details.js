@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { ProductContext } from '../App';
+import Button from './Button';
 
 export default function Details(props) {
     const { detailsOpen, handleDetailsToggle, addToCart } = useContext(ProductContext)
@@ -44,10 +45,22 @@ export default function Details(props) {
                         </div> */}
                         <div className="details-info-row-info-cart">
                             <p>Quantity</p>
-                            <div className={inCart ? "details-btn-inactive details-btn" :"details-btn"} onClick={() => {inCart ? console.log('') : addToCart(id)}}>
+                            <div className="details-btn">
+                                <Button
+                                    text={inCart ? 'Added To Cart' : 'Add To Cart'}
+                                    height={'50px'}
+                                    maxWidth={'150px'}
+                                    fontSize={'1rem'}
+                                    border={'1px solid var(--mainYellow)'}
+                                    borderRadius={'30px'}
+                                    disabled={inCart ? true : false}
+                                    onClick={() => addToCart(id)}
+                                />
+                            </div>
+                            {/* <div className={inCart ? "details-btn-inactive details-btn" :"details-btn"} onClick={() => {inCart ? console.log('') : addToCart(id)}}>
                                 <span className={inCart ? "details-btn-bg-active details-btn-bg" : "details-btn-bg"}></span>
                                 <span className={inCart ? "details-btn-text-active details-btn-text" : "details-btn-text"}>{inCart ? 'Added To Cart' : 'Add To Cart'}</span>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>

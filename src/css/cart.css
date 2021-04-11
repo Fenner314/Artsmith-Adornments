@@ -11,10 +11,6 @@
     flex-wrap: nowrap !important;
 }
 
-.cart-columns-item {
-
-}
-
 .btn-basic {
     border: 1px solid black;
     background: none;
@@ -42,4 +38,61 @@
 }
 .fa-trash:hover {
     color: var(--mainYellow)
+}
+
+.cart-added-container {
+    background: var(--mainWhite);
+    width: 300px;
+    height: 150px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    padding: 1rem;
+    box-shadow: 2px 2px 15px var(--mainGray);
+    z-index: 10002;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+    transition: opacity .3s 
+}
+.invisible {
+    opacity: 0;
+    height: 0;
+}
+
+.cart-added-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart-added-message i {
+    color: var(--mainYellow);
+}
+
+.cart-added-message p {
+    margin: 0;
+    padding-left: 1rem;
+}
+
+.cart-added-buttons {
+    display: flex;
+    width: 100%;
+}
+
+.cart-added-overlay-active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .3);
+    z-index: 10001;
+
+    transition: all .5s ease-in-out;
 }

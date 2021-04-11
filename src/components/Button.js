@@ -1,19 +1,41 @@
-import React from 'react'
+import React from 'react';
 
 export default function Button(props) {
-    let styles = {
+    const containerStyles = {
         maxWidth: props.maxWidth,
         height: props.height,
         fontSize: props.fontSize,
-        lineHeight: props.height
+        lineHeight: props.height,
     }
+
+    const innerContainerStyles = {
+        backgroundColor: props.backgroundColor,
+        borderRadius: props.borderRadius,
+    }
+
+    const buttonStyles = {
+        border: props.border,
+        borderRadius: props.borderRadius,
+    }
+
+    const activeStyle = {
+        width: '120%',
+    }
+    
     return (
-        <button className="button-container" style={styles}>
-            <div className="inner-button-container">
-                <span className="button-container-bg"></span>
-                <span className="button-container-base"></span>
-                <span className="button-container-text">{props.text}</span>
+        <button className="button-container" style={containerStyles} disabled={props.disabled} onClick={props.onClick}>
+            <div className="inner-button-container" style={innerContainerStyles}>
+                <span className="button-container-bg" style={props.disabled ? activeStyle : null}></span>
+                <span className="button-container-base" style={buttonStyles}></span>
+                <span className="button-container-text" style={props.disabled ? {color: 'var(--mainWhite)'} : null}>{props.text}</span>
             </div>
         </button>
+        // <button className="button-container" style={containerStyles} disabled={props.disabled} onClick={props.onClick}>
+        //     <div className="inner-button-container" style={{borderRadius: props.borderRadius, backgroundColor: props.backgroundColor}}>
+        //         <span className="button-container-bg"></span>
+        //         <span className="button-container-base" style={{border: props.border, borderRadius: props.borderRadius}}></span>
+        //         <span className="button-container-text">{props.text}</span>
+        //     </div>
+        // </button>
     )
 }

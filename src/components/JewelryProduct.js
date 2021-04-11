@@ -1,5 +1,6 @@
-import React, { useContext } from 'react'
-import { ProductContext } from '../App'
+import React, { useContext } from 'react';
+import { ProductContext } from '../App';
+import Button from './Button';
 
 export default function JewelryProduct(props) {
     const {
@@ -26,7 +27,19 @@ export default function JewelryProduct(props) {
                     <span>{name}</span>
                     <span>Price: ${price}</span>
                 </div>
-                <button 
+                <div className="cart-btn" >
+                    <Button 
+                        text={inCart ? 'Added To Cart' : 'Add To Cart'} 
+                        height={'40px'} 
+                        maxWidth={'150px'} 
+                        fontSize={'1rem'} 
+                        borderRadius={'30px'} 
+                        backgroundColor={'var(--mainWhite)'} 
+                        disabled={inCart ? true : false}
+                        onClick={() => addToCart(id)}
+                    />
+                </div>
+                {/* <button 
                     className="cart-btn" 
                     disabled={inCart ? true : false} 
                     onClick={() => {
@@ -35,7 +48,7 @@ export default function JewelryProduct(props) {
                 }}>
                     <span className={inCart ? "cart-btn-bg cart-btn-bg-active" : "cart-btn-bg"}></span>
                     <span className={inCart ? "cart-btn-text cart-btn-text-active" : "cart-btn-text"}>{inCart ? "Added To Cart" : "Add To Cart"}</span>
-                </button>
+                </button> */}
                 {/* <button className="cart-btn" disabled={inCart ? true : false} onClick={() => inCart ? console.log('no') : addToCart(id)}>
                     <span className={inCart ? "cart-btn-bg cart-btn-bg-active" : "cart-btn-bg"}></span>
                     <span className={inCart ? "cart-btn-text cart-btn-text-active" : "cart-btn-text"}>{inCart ? "Added To Cart" : "Add To Cart"}</span>

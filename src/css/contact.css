@@ -83,47 +83,8 @@
 
 .button {
     grid-column: 2 / span 1;
-    width: 100px;
     justify-self: end;
-    color: var(--mainYellow);
-    background: transparent;
-    position: relative;
-    text-align: center;
-    line-height: 50px;
-    text-decoration: none;
-    display: block;
-    overflow: hidden;
-}
-.bg {
-    left: -5%;
-    position: absolute;
-    background-color: var(--mainYellow);
-    width: 0;
-    height: 100%;
-    z-index: 3;
-
-    transition: all .5s ease-out;
-    transform: skewX(-10deg)
-}
-.text {
-    z-index: 4;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    border: 1px solid var(--mainYellow);
-
-    transition: color .5s ease-out;
-}
-.button:hover {
-    cursor: pointer;
-}
-.button:hover .text {
-    color: var(--mainWhite);
-}
-.button:hover .bg {
-    width: 120%;
+    width: 50%;
 }
 
 .newsletter {
@@ -155,6 +116,18 @@
     border-bottom: 1px solid black;
     background-color: transparent;
     padding: .2rem
+}
+
+@media only screen and (min-width: 1360px) {
+    .contact-grid-form input {
+        width: 250px;
+    }
+    #message textarea {
+        width: 250px;
+    }
+    .button {
+        width: 40%
+    }
 }
 
 @media only screen and (max-width: 1084px) {
@@ -211,8 +184,8 @@
     .button {
         height: 3rem;
         position: absolute;
-        right: 50%;
-        transform: translateX(50%);
+        left: 0;
+        transform: translateX(0);
     }
     .newsletter {
         margin-left: -2rem;

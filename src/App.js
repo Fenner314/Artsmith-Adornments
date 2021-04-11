@@ -12,14 +12,15 @@ import PrivacyPolicy from './components/PrivacyPolicy';
 import RefundPolicy from './components/RefundPolicy';
 import SizingChart from './components/SizingChart';
 import Details from './components/Details';
+import CartAdded from './components/Cart/CartAdded';
 import Contact from './components/Contact';
-import Button from './components/Button';
 import Cart from './components/Cart/Cart';
 
 export const ProductContext = React.createContext();
 
 function App() {
   const [detailsOpen, setDetailsOpen] = useState(false);
+  const [cartAddedOpen, setCartAddedOpen] = useState(false);
   const [storeProducts, setStoreProducts] = useState(products);
   const [detailProduct, setDetailProduct] = useState(productDetails);
   const [cart, setCart] = useState([]);
@@ -42,6 +43,10 @@ function App() {
     detailsOpen ? setDetailsOpen(false) : setDetailsOpen(true)
   }
 
+  const handleCartAddedOpenToggle = () => {
+    cartAddedOpen ? setCartAddedOpen(false) : setCartAddedOpen(true)
+  }
+
   const addToCart = (id) => {
     const product = getItem(id);
     product.inCart = true;
@@ -49,12 +54,12 @@ function App() {
     const price = product.price;
     product.total = price;
     setCartLength(cartLength + 1);
+    setCartAddedOpen(true);
 
     setCart(() => {
       return [...cart, product]
-    }, () => {
-      setTimeout(addTotals(), 100)
-    })
+    });
+    addTotals();
   }
 
   const increment = (id) => {
@@ -131,6 +136,9 @@ function App() {
   const productContextValue = {
     getItem,
     detailsOpen,
+    setDetailsOpen,
+    cartAddedOpen,
+    handleCartAddedOpenToggle,
     detailProduct,
     cart,
     cartLength,
@@ -165,7 +173,7 @@ function App() {
             <Route path="/cart" component={Cart} />
           </Switch>
           <Details {...productDetails} detailProduct={detailProduct} />
-          <Button text={'Add To Cart'} maxWidth={'160px'} height={'40px'} fontSize={'1rem'} />
+          <CartAdded />
           <Contact />
         </div>
       </div>

@@ -47,9 +47,12 @@ export default function Contact() {
                             <span className="underline"></span>
                         </div>
                         <div className="button">
+                            <Button text={'Send'} maxWidth={'100px'} height={'50px'} fontSize={'1rem'} border={'1px solid var(--mainYellow)'} onClick={() => console.log('clicked')} />
+                        </div>
+                        {/* <div className="button">
                             <span className="bg"></span>
                             <span className="text">Send</span>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>

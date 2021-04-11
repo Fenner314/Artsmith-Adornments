@@ -26,7 +26,7 @@
     width: 100%;
     position: relative;
     overflow: hidden;
-    border-radius: 30px;
+    /* border-radius: different for each render - props */
 }
 
 .button-container-bg {
@@ -47,8 +47,8 @@
     width: 100%;
     height: 100%;
     left: 0;
-    border: 1px solid var(--mainYellow);
-    border-radius: 30px;
+    /* border: 1px solid var(--mainYellow); */
+    /* border-radius: different for each render - props */
 }
 
 .button-container-text {
