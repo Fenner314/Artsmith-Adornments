@@ -3,7 +3,7 @@ import { ProductContext } from '../App';
 import Button from './Button';
 
 export default function Details(props) {
-    const { detailsOpen, handleDetailsToggle, addToCart } = useContext(ProductContext)
+    const { detailsOpen, handleDetailsToggle, addToCart, increment, decrement } = useContext(ProductContext)
     
     const {
         id, 
@@ -44,11 +44,25 @@ export default function Details(props) {
                             </button>
                         </div> */}
                         <div className="details-info-row-info-cart">
-                            <p>Quantity</p>
+                            <p>Quantity:</p>
+                            <div className="quantity-ctrl">
+                                <button 
+                                    className="quantity-btn" 
+                                    disabled={count <= 1 ? true : false}
+                                    onClick={() => decrement(id)}>
+                                    -
+                                </button>
+                                <span className="quantity-text" id="">{count}</span>
+                                <button 
+                                    className="quantity-btn" 
+                                    onClick={() => increment(id)}>
+                                    +
+                                </button>
+                            </div>
                             <div className="details-btn">
                                 <Button
                                     text={inCart ? 'Added To Cart' : 'Add To Cart'}
-                                    height={'50px'}
+                                    height={'46px'}
                                     maxWidth={'150px'}
                                     fontSize={'1rem'}
                                     border={'1px solid var(--mainYellow)'}

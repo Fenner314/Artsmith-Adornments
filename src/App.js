@@ -50,7 +50,9 @@ function App() {
   const addToCart = (id) => {
     const product = getItem(id);
     product.inCart = true;
-    product.count = 1;
+    if (product.count === 0) {
+      product.count = 1
+    }
     const price = product.price;
     product.total = price;
     setCartLength(cartLength + 1);
@@ -65,7 +67,8 @@ function App() {
   const increment = (id) => {
     const selectedProduct = cart.find(item => item.id === id);
     const index = cart.indexOf(selectedProduct);
-    const product = cart[index];
+    const product = getItem(id);
+    // const product = cart[index];
 
     product.count += 1;
     product.total = product.count * product.price;
@@ -82,7 +85,8 @@ function App() {
   const decrement = (id) => {
     const selectedProduct = cart.find(item => item.id === id);
     const index = cart.indexOf(selectedProduct);
-    const product = cart[index];
+    const product = getItem(id);
+    // const product = cart[index];
 
     product.count -= 1;
     product.total = product.count * product.price;

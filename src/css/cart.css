@@ -27,6 +27,25 @@
     background-color: black;
 }
 
+.quantity-ctrl {
+    border: 1px solid rgb(61, 61, 61);
+    border-radius: 30px;
+    width: 100px;
+    padding: 5px 0;
+    display: flex;justify-content: space-evenly;
+}
+.quantity-btn {
+    border: none;
+    background: none;
+    padding: 5px;
+}
+.quantity-btn:hover {
+    color: var(--mainYellow);
+}
+.quantity-text {
+    padding: 5px;
+}
+
 #no-border {
     border: none;
 }

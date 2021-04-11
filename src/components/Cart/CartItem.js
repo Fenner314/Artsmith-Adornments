@@ -3,7 +3,7 @@ import { ProductContext } from '../../App';
 
 export default function CartItem({ item, cart }) {
     const {id, name, img, price, total, count} = item;
-    const { getItem, increment, decrement, removeItem } = useContext(ProductContext)
+    const { increment, decrement, removeItem } = useContext(ProductContext)
     
     return (
         <div className="row my-4 text-center">
@@ -24,16 +24,16 @@ export default function CartItem({ item, cart }) {
             </div>
             <div className="col-10 my-1 mx-auto col-lg-2 d-flex justify-content-center align-items-center">
                 <div className="d-flex justify-content-center">
-                    <div>
+                    <div className="quantity-ctrl">
                         <button 
-                            className="btn-basic btn-black mx-1" 
+                            className="quantity-btn" 
                             disabled={count === 1 ? true : false}
                             onClick={() => decrement(id)}>
                             -
                         </button>
-                        <span className="btn-basic mx-1" id="no-border">{count}</span>
+                        <span className="quantity-text" id="">{count}</span>
                         <button 
-                            className="btn-basic btn-black mx-1" 
+                            className="quantity-btn" 
                             onClick={() => increment(id)}>
                             +
                         </button>
