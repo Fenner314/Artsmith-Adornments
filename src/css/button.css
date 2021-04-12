@@ -14,10 +14,13 @@
     
     transition: color .5s ease-in-out;
 }
-.button-container:hover {
+.button-container:hover, 
+.button-container:focus {
     color: var(--mainWhite);
+    outline: none;
 }
-.button-container:hover .button-container-bg {
+.button-container:hover .button-container-bg,
+.button-container:focus .button-container-bg {
     width: 120%;
 }
 

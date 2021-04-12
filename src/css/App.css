@@ -11,6 +11,7 @@
 @import './details.css';
 @import './cart.css';
 @import './copyright.css';
+@import './auth.css';
 
 :root {
     --mainYellow: #d18f14;

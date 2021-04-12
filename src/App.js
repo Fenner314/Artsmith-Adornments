@@ -15,6 +15,7 @@ import Details from './components/Details';
 import CartAdded from './components/Cart/CartAdded';
 import Contact from './components/Contact';
 import Account from './components/Account';
+import Auth from './components/login/Auth';
 import Cart from './components/Cart/Cart';
 
 export const ProductContext = React.createContext();
@@ -29,7 +30,7 @@ function App() {
   const [cartSubTotal, setCartSubTotal] = useState(0);
   const [cartTax, setCartTax] = useState(0);
   const [cartTotal, setCartTotal] = useState(0);
-  const [tempCount, setTempCount] = useState(0);
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
 
   useEffect(() => {
     addTotals()
@@ -205,11 +206,14 @@ function App() {
             <Route path="/privacy_policy" component={PrivacyPolicy} />
             <Route path="/refund_policy" component={RefundPolicy} />
             <Route path="/sizing_chart" component={SizingChart} />
-            <Route path="/account" component={Account} />
+            <Route path="/account" component={Auth} />
+            {/* <Route path="/account" component={isLoggedIn ? Account : Auth} /> */}
             <Route path="/cart" component={Cart} />
           </Switch>
           <Details {...productDetails} detailProduct={detailProduct} />
           <CartAdded />
+          {/* <Login />
+          <Register /> */}
           <Contact />
         </div>
       </div>

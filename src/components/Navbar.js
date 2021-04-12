@@ -79,14 +79,18 @@ export default function Navbar() {
                     <a href="https://www.facebook.com/artsmithadornments" target="_blank" rel="noreferrer">
                         <i className="fab fa-facebook right-link-item"/>
                     </a>
-                    <i className="far fa-user-circle right-link-item"/>
+                    {/* <Link to="/account"> */}
+                        <i className="far fa-user-circle right-link-item"/>
+                    {/* </Link> */}
                 </li>
             </ul>
             <ul className="right-links">
                 <a href="https://www.facebook.com/artsmithadornments" target="_blank" rel="noreferrer">
                     <i className="fab fa-facebook right-link-item small-screen-d-none"/>
                 </a>
-                <i className="far fa-user-circle right-link-item small-screen-d-none"/>
+                <Link to="/account">
+                    <i className="far fa-user-circle right-link-item"/>
+                </Link>
                 <Link to="/cart">
                     <div className="cart">
                         <i className="fas fa-shopping-bag right-link-item" id="shopping-bag" />
