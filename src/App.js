@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { products, productDetails } from './data';
 import './css/App.css';
 import {Switch, Route} from 'react-router-dom';
@@ -14,6 +14,7 @@ import SizingChart from './components/SizingChart';
 import Details from './components/Details';
 import CartAdded from './components/Cart/CartAdded';
 import Contact from './components/Contact';
+import Account from './components/Account';
 import Cart from './components/Cart/Cart';
 
 export const ProductContext = React.createContext();
@@ -28,6 +29,11 @@ function App() {
   const [cartSubTotal, setCartSubTotal] = useState(0);
   const [cartTax, setCartTax] = useState(0);
   const [cartTotal, setCartTotal] = useState(0);
+  const [tempCount, setTempCount] = useState(0);
+
+  useEffect(() => {
+    addTotals()
+  }, [cart])
 
   const getItem = (id) => {
     const product = storeProducts.find(item => item.id === id);
@@ -55,13 +61,12 @@ function App() {
     }
     const price = product.price;
     product.total = price;
-    setCartLength(cartLength + 1);
+    setCartLength(cartLength + product.count);
     setCartAddedOpen(true);
 
     setCart(() => {
       return [...cart, product]
     });
-    addTotals();
   }
 
   const increment = (id) => {
@@ -79,7 +84,6 @@ function App() {
     // })
     setCart([...cart]);
     console.log(cart)
-    addTotals();
   }
 
   const decrement = (id) => {
@@ -93,7 +97,34 @@ function App() {
 
     setCartLength(cartLength - 1);
     setCart([...cart]);
-    addTotals();
+  }
+
+  const qtyIncrement = (id) => {
+    const selectedProduct = cart.find(item => item.id === id);
+    const index = cart.indexOf(selectedProduct);
+    const product = getItem(id);
+    // const product = cart[index];
+
+    product.count += 1;
+    product.total = product.count * product.price;
+
+    // setCart(() => {
+    //   return [...cart, product]
+    // })
+    setCart([...cart]);
+    console.log(cart)
+  }
+
+  const qtyDecrement = (id) => {
+    const selectedProduct = cart.find(item => item.id === id);
+    const index = cart.indexOf(selectedProduct);
+    const product = getItem(id);
+    // const product = cart[index];
+
+    product.count -= 1;
+    product.total = product.count * product.price;
+
+    setCart([...cart]);
   }
 
   const removeItem = (id) => {
@@ -111,7 +142,6 @@ function App() {
 
     setCart([...tempCart]);
     setStoreProducts([...tempProducts]);
-    addTotals();
   }
 
   const clearCart = () => {
@@ -122,12 +152,11 @@ function App() {
     });
     setCart([]);
     setCartLength(0);
-    addTotals();
   }
 
   const addTotals = () => {
     let subTotal = 0;
-    cart.map(item => (subTotal += item.total));
+    cart.map(item => (subTotal += (item.price * item.count)));
     const tempTax = subTotal * .065;
     const tax = parseFloat(tempTax.toFixed(2));
     const total = subTotal + tax;
@@ -154,6 +183,8 @@ function App() {
     addToCart,
     increment,
     decrement,
+    qtyIncrement,
+    qtyDecrement,
     removeItem,
     clearCart,
     addTotals,
@@ -174,6 +205,7 @@ function App() {
             <Route path="/privacy_policy" component={PrivacyPolicy} />
             <Route path="/refund_policy" component={RefundPolicy} />
             <Route path="/sizing_chart" component={SizingChart} />
+            <Route path="/account" component={Account} />
             <Route path="/cart" component={Cart} />
           </Switch>
           <Details {...productDetails} detailProduct={detailProduct} />
