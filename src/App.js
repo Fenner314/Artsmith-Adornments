@@ -15,15 +15,15 @@ import Details from './components/Details';
 import CartAdded from './components/Cart/CartAdded';
 import Contact from './components/Contact';
 import Account from './components/Account';
-import Auth from './components/login/Auth';
 import Login from './components/login/Login';
 import Register from './components/login/Register';
 import ForgotPassword from './components/login/ForgotPassword';
 import Cart from './components/Cart/Cart';
-import fire from './components/login/Firebase';
 import { auth } from './components/login/Firebase';
 
 export const ProductContext = React.createContext();
+const USER_KEY = 'artsmithAdornments.user';
+const LOG_KEY = 'artsmithAdornments.loggedIn';
 
 function App() {
   const [detailsOpen, setDetailsOpen] = useState(false);
@@ -43,14 +43,36 @@ function App() {
 
   useEffect(() => {
     addTotals()
-  }, [cart])
+  }, [cart]);
+
+  useEffect(() => {
+    const userJSON = localStorage.getItem(USER_KEY);
+    const logJSON = localStorage.getItem(LOG_KEY);
+    if (logJSON === 'true') {
+      setUser(JSON.parse(userJSON));
+      setIsLoggedIn(true);
+      console.log('true')
+    } else {
+      console.log('false')
+    }
+  }, [])
+  
+  useEffect(() => {
+    localStorage.setItem(LOG_KEY, JSON.stringify(isLoggedIn))
+  }, [isLoggedIn])
+  
+  useEffect(() => {
+    localStorage.setItem(USER_KEY, JSON.stringify(user))
+  }, [user]);
 
   const handleLogin = (email, password) => {
-    return auth.signInWithEmailAndPassword(email, password)
+    setIsLoggedIn(true);
+    return auth.signInWithEmailAndPassword(email, password);
   }
 
   const handleRegister = (email, password) => {
-    return auth.createUserWithEmailAndPassword(email, password)
+    setIsLoggedIn(true);
+    return auth.createUserWithEmailAndPassword(email, password);
   }
 
   useEffect(() => {
@@ -63,7 +85,8 @@ function App() {
   }, [])
 
   const logout = () => {
-    return auth.signOut()
+    setIsLoggedIn(false);
+    return auth.signOut();
   }
 
   const resetPassword = (email) => {
@@ -76,10 +99,6 @@ function App() {
 
   const updatePassword = (password) => {
       return user.updatePassword(password)
-  }
-
-  const authListener = () => {
-
   }
 
   const getItem = (id) => {
@@ -117,60 +136,36 @@ function App() {
   }
 
   const increment = (id) => {
-    const selectedProduct = cart.find(item => item.id === id);
-    const index = cart.indexOf(selectedProduct);
     const product = getItem(id);
-    // const product = cart[index];
 
     product.count += 1;
     product.total = product.count * product.price;
     setCartLength(cartLength + 1);
-
-    // setCart(() => {
-    //   return [...cart, product]
-    // })
     setCart([...cart]);
-    console.log(cart)
   }
 
   const decrement = (id) => {
-    const selectedProduct = cart.find(item => item.id === id);
-    const index = cart.indexOf(selectedProduct);
     const product = getItem(id);
-    // const product = cart[index];
 
     product.count -= 1;
     product.total = product.count * product.price;
-
     setCartLength(cartLength - 1);
     setCart([...cart]);
   }
 
   const qtyIncrement = (id) => {
-    const selectedProduct = cart.find(item => item.id === id);
-    const index = cart.indexOf(selectedProduct);
     const product = getItem(id);
-    // const product = cart[index];
 
     product.count += 1;
     product.total = product.count * product.price;
-
-    // setCart(() => {
-    //   return [...cart, product]
-    // })
     setCart([...cart]);
-    console.log(cart)
   }
 
   const qtyDecrement = (id) => {
-    const selectedProduct = cart.find(item => item.id === id);
-    const index = cart.indexOf(selectedProduct);
     const product = getItem(id);
-    // const product = cart[index];
 
     product.count -= 1;
     product.total = product.count * product.price;
-
     setCart([...cart]);
   }
 
@@ -214,11 +209,8 @@ function App() {
   }
 
   const productContextValue = {
-    getItem,
     detailsOpen,
-    setDetailsOpen,
     cartAddedOpen,
-    handleCartAddedOpenToggle,
     detailProduct,
     cart,
     cartLength,
@@ -227,8 +219,9 @@ function App() {
     cartTotal,
     user,
     email,
-    setEmail,
     password,
+    isLoggedIn,
+    setEmail,
     setPassword,
     handleLogin,
     handleRegister,
@@ -236,8 +229,10 @@ function App() {
     resetPassword,
     updateEmail,
     updatePassword,
-    isLoggedIn,
     setIsLoggedIn,
+    getItem,
+    setDetailsOpen,
+    handleCartAddedOpenToggle,
     handleDetailsToggle,
     handleDetail,
     addToCart,
@@ -265,18 +260,14 @@ function App() {
             <Route path="/privacy_policy" component={PrivacyPolicy} />
             <Route path="/refund_policy" component={RefundPolicy} />
             <Route path="/sizing_chart" component={SizingChart} />
-            {/* <Route path="/account" component={isLoggedIn ? Account : Auth} /> */}
             <Route path="/account" component={Account} />
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
             <Route path="/forgot-password" component={ForgotPassword} />
-            {/* <Route path="/account" component={isLoggedIn ? Account : Auth} /> */}
             <Route path="/cart" component={Cart} />
           </Switch>
           <Details {...productDetails} detailProduct={detailProduct} />
           <CartAdded />
-          {/* <Login />
-          <Register /> */}
           <Contact />
         </div>
       </div>

@@ -69,7 +69,7 @@ export default function UpdateAccount(props) {
             <div className="auth-form">
                 <div className="auth-form-group">
                     <label htmlFor="email">Email</label>
-                    <input autoFocus type="email" name="email" ref={emailRef} defaultValue={user.email} />
+                    <input autoFocus type="email" name="email" ref={emailRef} defaultValue={user && user.email} />
                     <span className="auth-underline"></span>
                 </div>
                 <div className="auth-form-group">

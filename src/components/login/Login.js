@@ -6,6 +6,7 @@ import Button from '../Button';
 export default function Login(props) {
     const { 
         handleLogin,
+        setIsLoggedIn
     } = useContext(ProductContext);
 
     const emailRef = useRef();

@@ -89,7 +89,7 @@ export default function Navbar() {
                     <i className="fab fa-facebook right-link-item small-screen-d-none"/>
                 </a>
                     <div className="account-icon-container">
-                        <Link to={isLoggedIn ? "/account" : "Login"}>
+                        <Link to={isLoggedIn ? "/account" : "/login"}>
                             <i className="far fa-user-circle right-link-item account-icon"/>
                             <p className="account-box">Account</p>
                         </Link>
