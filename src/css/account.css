@@ -1,0 +1,50 @@
+.account-container {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    position: relative;
+}
+
+.account-logout-button {
+    width: 100px;
+    position: absolute;
+    right: 0;
+    margin: 1.5rem 1.5rem;
+}
+
+.update-container {
+    background: var(--mainWhite);
+    width: 40vw;
+    height: 90vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    padding: 3rem;
+    box-shadow: 2px 2px 15px var(--mainGray);
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    transition: opacity .3s 
+}
+
+.update-button {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.update-cancel {
+    color: var(--mainYellow);
+    font-size: 1rem !important;
+    cursor: pointer;
+    padding-top: 2rem;
+}
+.update-cancel:hover {
+    text-decoration: underline;
+}

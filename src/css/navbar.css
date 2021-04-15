@@ -116,8 +116,33 @@
 
     transition: all .3s ease-out
 }
-.fa-facebook:hover, .fa-user-circle:hover {
+.fa-facebook:hover {
     color: var(--mainYellow);
+}
+
+.account-icon-container {
+    position: relative;
+    cursor: pointer;
+}
+.account-icon-container:hover .account-icon {
+    color: var(--mainYellow)
+}
+
+.account-box {
+    position: absolute;
+    left: -2px;
+    bottom: -33px;
+    font-size: .75rem;
+    clip-path: polygon(0 15%, 40% 15%, 50% 0%, 60% 15%, 100% 15%, 100% 100%, 0 100%);
+    background-color: black;
+    color: var(--mainYellow);
+    padding: 3px 3px 1px 3px;
+    opacity: 0;
+
+    transition: opacity .3s ease-in-out
+}
+.account-icon-container:hover .account-box {
+    opacity: 1;
 }
 
 .cart {

@@ -16,7 +16,12 @@ import CartAdded from './components/Cart/CartAdded';
 import Contact from './components/Contact';
 import Account from './components/Account';
 import Auth from './components/login/Auth';
+import Login from './components/login/Login';
+import Register from './components/login/Register';
+import ForgotPassword from './components/login/ForgotPassword';
 import Cart from './components/Cart/Cart';
+import fire from './components/login/Firebase';
+import { auth } from './components/login/Firebase';
 
 export const ProductContext = React.createContext();
 
@@ -30,11 +35,52 @@ function App() {
   const [cartSubTotal, setCartSubTotal] = useState(0);
   const [cartTax, setCartTax] = useState(0);
   const [cartTotal, setCartTotal] = useState(0);
+  const [user, setUser] = useState();
+  const [loading, setLoading] = useState(true);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [isLoggedIn, setIsLoggedIn] = useState(false)
 
   useEffect(() => {
     addTotals()
   }, [cart])
+
+  const handleLogin = (email, password) => {
+    return auth.signInWithEmailAndPassword(email, password)
+  }
+
+  const handleRegister = (email, password) => {
+    return auth.createUserWithEmailAndPassword(email, password)
+  }
+
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged(user => {
+      setUser(user)
+      setLoading(false)
+    });
+
+    return unsubscribe
+  }, [])
+
+  const logout = () => {
+    return auth.signOut()
+  }
+
+  const resetPassword = (email) => {
+    return auth.sendPasswordResetEmail(email)
+  }
+
+  const updateEmail = (email) => {
+      return user.updateEmail(email)
+  }
+
+  const updatePassword = (password) => {
+      return user.updatePassword(password)
+  }
+
+  const authListener = () => {
+
+  }
 
   const getItem = (id) => {
     const product = storeProducts.find(item => item.id === id);
@@ -179,6 +225,19 @@ function App() {
     cartSubTotal,
     cartTax,
     cartTotal,
+    user,
+    email,
+    setEmail,
+    password,
+    setPassword,
+    handleLogin,
+    handleRegister,
+    logout,
+    resetPassword,
+    updateEmail,
+    updatePassword,
+    isLoggedIn,
+    setIsLoggedIn,
     handleDetailsToggle,
     handleDetail,
     addToCart,
@@ -206,7 +265,11 @@ function App() {
             <Route path="/privacy_policy" component={PrivacyPolicy} />
             <Route path="/refund_policy" component={RefundPolicy} />
             <Route path="/sizing_chart" component={SizingChart} />
-            <Route path="/account" component={Auth} />
+            {/* <Route path="/account" component={isLoggedIn ? Account : Auth} /> */}
+            <Route path="/account" component={Account} />
+            <Route path="/login" component={Login} />
+            <Route path="/register" component={Register} />
+            <Route path="/forgot-password" component={ForgotPassword} />
             {/* <Route path="/account" component={isLoggedIn ? Account : Auth} /> */}
             <Route path="/cart" component={Cart} />
           </Switch>

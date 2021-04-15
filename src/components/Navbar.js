@@ -12,7 +12,7 @@ export default function Navbar() {
     const [menuButton, setMenuButton] = useState(false);
     const [menu, setMenu] = useState(false);
 
-    const { cartLength } = useContext(ProductContext);
+    const { cartLength, isLoggedIn } = useContext(ProductContext);
 
     const changeNavHeight = () => {
         window.scrollY >= 105 ? setNav(true) : setNav(false)
@@ -88,9 +88,12 @@ export default function Navbar() {
                 <a href="https://www.facebook.com/artsmithadornments" target="_blank" rel="noreferrer">
                     <i className="fab fa-facebook right-link-item small-screen-d-none"/>
                 </a>
-                <Link to="/account">
-                    <i className="far fa-user-circle right-link-item"/>
-                </Link>
+                    <div className="account-icon-container">
+                        <Link to={isLoggedIn ? "/account" : "Login"}>
+                            <i className="far fa-user-circle right-link-item account-icon"/>
+                            <p className="account-box">Account</p>
+                        </Link>
+                    </div>
                 <Link to="/cart">
                     <div className="cart">
                         <i className="fas fa-shopping-bag right-link-item" id="shopping-bag" />
