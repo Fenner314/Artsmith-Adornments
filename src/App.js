@@ -19,7 +19,8 @@ import Login from './components/login/Login';
 import Register from './components/login/Register';
 import ForgotPassword from './components/login/ForgotPassword';
 import Cart from './components/Cart/Cart';
-import { auth } from './components/login/Firebase';
+import { auth, db } from './components/login/Firebase';
+console.log(db)
 
 export const ProductContext = React.createContext();
 const USER_KEY = 'artsmithAdornments.user';
