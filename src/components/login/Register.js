@@ -6,6 +6,7 @@ import Button from '../Button';
 export default function Register(props) {
     const { handleRegister } = useContext(ProductContext);
 
+    const nameRef = useRef();
     const emailRef = useRef();
     const passwordRef = useRef();
     const passwordConfirmRef = useRef();
@@ -53,6 +54,11 @@ export default function Register(props) {
                 <h3 className="auth-header">Register</h3>
                 <p className={error ? "error-message" : ""}>{error}</p>
                 <div className="auth-form">
+                    {/* <div className="auth-form-group">
+                        <label htmlFor="name">Username</label>
+                        <input autoFocus type="name" name="name" ref={nameRef} />
+                        <span className="auth-underline"></span>
+                    </div> */}
                     <div className="auth-form-group">
                         <label htmlFor="email">Email</label>
                         <input autoFocus type="email" name="email" ref={emailRef} />

@@ -1,22 +1,25 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { ProductContext } from '../App';
 import Carousel from './Carousel';
 import ProductRender from './ProductRender';
 
 export default function JewelryList(props) {
+    const { testLength, setTestLength, handleLength } = useContext(ProductContext);
+
     return (
         <div className="jewelry-list-container">
             <Carousel>
                 {/* CHILDREN BETWEEN PRODUCTRENDERS ARE CATEGORY OF DESIRED PRODUCT */}
-                <ProductRender title={'Rings'} setLength={props.setLength}>rings</ProductRender>
+                <ProductRender title={'Rings'} handleLength={handleLength} length={testLength}>rings</ProductRender>
             </Carousel>
             <Carousel>
-                <ProductRender title={'Necklaces'} setLength={props.setLength}>necklace</ProductRender>
+                <ProductRender title={'Necklaces'}>necklace</ProductRender>
             </Carousel>
             <Carousel>
-                <ProductRender title={'Earrings'} setLength={props.setLength}>earring</ProductRender>
+                <ProductRender title={'Earrings'}>earring</ProductRender>
             </Carousel>
             <Carousel>
-                <ProductRender title={'Bracelets'} setLength={props.setLength}>bracelet</ProductRender>
+                <ProductRender title={'Bracelets'}>bracelet</ProductRender>
             </Carousel>
         </div>
     )

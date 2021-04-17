@@ -2,6 +2,8 @@
     min-height: 100vh;
     width: 100%;
     display: flex;
+    flex-direction: column;
+    align-items: center;
     position: relative;
 }
 
@@ -9,7 +11,12 @@
     width: 100px;
     position: absolute;
     right: 0;
+    top: 0;
     margin: 1.5rem 1.5rem;
+}
+
+.account-greeting {
+    padding: 4rem 0 2rem 0
 }
 
 .update-container {
@@ -29,7 +36,7 @@
     flex-direction: column;
     align-items: center;
 
-    transition: opacity .3s 
+    transition: opacity .3s; 
 }
 
 .update-button {

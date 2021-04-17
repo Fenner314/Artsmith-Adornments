@@ -24,7 +24,7 @@ export default function Account() {
     return (
         <>
             <div className="account-container">
-                <h2>Hello, {user && user.email}</h2>
+                <h2 className="account-greeting">Hello, {user && user.email}</h2>
                 <Button
                     text={'Update Profile'}
                     height={'36px'}

@@ -1,18 +1,18 @@
-import React from 'react'
+import React from 'react';
 
 export default function SlideControls(props) {
     const {
-        handleRightClick,
-        handleLeftClick,
-        handleEnd,
+        transform,
+        handleRightArrowClick,
+        handleLeftArrowClick,
     } = props
 
     return (
         <div className="slide-controls">
-            <button id="prev-btn" onClick={handleLeftClick}>
+            <button id={transform <= 0 ? "invisible" : "prev-btn"} onClick={handleLeftArrowClick}>
                 <i class="fas fa-chevron-left" />
             </button>
-            <button id="next-btn" onClick={handleRightClick}>
+            <button id="next-btn" onClick={handleRightArrowClick}>
                 <i class="fas fa-chevron-right" />
             </button>
         </div>

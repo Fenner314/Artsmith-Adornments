@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect, useContext } from 'react';
+import { ProductContext } from '../App';
 import { products } from '../data';
 import JewelryProduct from './JewelryProduct';
-import SlideControls from './SlideControls';
 
 export default function ProductRender(props) {
     const children = props.children;
@@ -16,7 +16,6 @@ export default function ProductRender(props) {
                     <JewelryProduct key={product.id} {...product} product={product} />
                 )
             })}
-            <SlideControls />
         </React.Fragment>
     )
 }

@@ -19,7 +19,7 @@ import Login from './components/login/Login';
 import Register from './components/login/Register';
 import ForgotPassword from './components/login/ForgotPassword';
 import Cart from './components/Cart/Cart';
-import { auth } from './components/login/Firebase';
+import { auth, db } from './components/login/Firebase';
 
 export const ProductContext = React.createContext();
 const USER_KEY = 'artsmithAdornments.user';
@@ -39,7 +39,14 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [testLength, setTestLength] = useState(0);
+
+  const handleLength = (val) => {
+    setTestLength(val)
+  }
+
+  console.log(db)
 
   useEffect(() => {
     addTotals()
@@ -64,6 +71,15 @@ function App() {
   useEffect(() => {
     localStorage.setItem(USER_KEY, JSON.stringify(user))
   }, [user]);
+
+  // useEffect(() => {
+  //   getCart();
+  // });
+
+  // const getCart = async () => {
+  //   const response = db.collection('cart');
+  //   const data = await response.get();
+  // }
 
   const handleLogin = (email, password) => {
     setIsLoggedIn(true);
@@ -243,6 +259,9 @@ function App() {
     removeItem,
     clearCart,
     addTotals,
+    testLength, 
+    setTestLength,
+    handleLength
   }
 
   return (
