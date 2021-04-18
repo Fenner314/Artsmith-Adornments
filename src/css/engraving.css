@@ -1,0 +1,63 @@
+.engraving-container {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 3rem
+}
+
+.engraving-form-container {
+    background-color: var(--offWhite);
+    padding: 2rem;
+    margin: 3rem;
+    box-shadow: 2px 2px 15px var(--mainGray);
+}
+
+.engraving-form-group {
+    display: flex;
+    flex-direction: column;
+    margin: .5rem;
+    position: relative;
+}
+
+.engraving-form-group input {
+    margin-bottom: .5rem;
+    width: 100%;
+    height: 36px;
+    border: none;
+    padding-left: .3rem;
+    padding-right: 2rem;
+    background-color: white
+}
+.engraving-form-group input:focus,
+.engraving-form-group select:focus,
+.engraving-form-group textarea:focus {
+    outline: none;
+}
+.engraving-form-group input:focus + span {
+    width: 100%;
+}
+
+.engraving-form-group select {
+    border: none;
+    height: 36px
+}
+
+.engraving-form-group textarea {
+    border: none;
+    height: 8rem
+}
+
+.b-0 {
+    bottom: 0
+}
+
+.engraving-form-group select:focus + span,
+.engraving-form-group textarea:focus + span {
+    width: 100%;
+}
+
+#file {
+    background-color: transparent;
+}
