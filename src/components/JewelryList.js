@@ -8,8 +8,12 @@ export default function JewelryList(props) {
 
     return (
         <div className="jewelry-list-container">
-            <Carousel>
-                {/* CHILDREN BETWEEN PRODUCTRENDERS ARE CATEGORY OF DESIRED PRODUCT */}
+            <Carousel title={'Rings'} category={'rings'} handleLength={handleLength} length={testLength} />
+            <Carousel title={'Necklaces'} category={'necklace'} />
+            <Carousel title={'Earrings'} category={'earring'} />
+            <Carousel title={'Bracelets'} category={'bracelet'} />
+            {/* <Carousel>
+                CHILDREN BETWEEN PRODUCTRENDERS ARE CATEGORY OF DESIRED PRODUCT
                 <ProductRender title={'Rings'} handleLength={handleLength} length={testLength}>rings</ProductRender>
             </Carousel>
             <Carousel>
@@ -20,7 +24,7 @@ export default function JewelryList(props) {
             </Carousel>
             <Carousel>
                 <ProductRender title={'Bracelets'}>bracelet</ProductRender>
-            </Carousel>
+            </Carousel> */}
         </div>
     )
 }

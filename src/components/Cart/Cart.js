@@ -15,7 +15,7 @@ export default function Cart(props) {
                 <Title name='Your Cart' />
                 <CartColumns />
                 <CartList cart={cart}/>
-                <CartTotals cart={cart}/>
+                <CartTotals cart={cart} history={props.history} />
             </div>
         )
     } 

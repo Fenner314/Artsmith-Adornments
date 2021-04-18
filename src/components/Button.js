@@ -6,6 +6,7 @@ export default function Button(props) {
         height: props.height,
         fontSize: props.fontSize,
         lineHeight: props.height,
+        color: props.textColor
     }
 
     const innerContainerStyles = {
@@ -21,11 +22,15 @@ export default function Button(props) {
     const activeStyle = {
         width: '120%',
     }
+
+    const bgStyle = {
+        backgroundColor: props.color,
+    }
     
     return (
         <button className="button-container" style={containerStyles} disabled={props.disabled} onClick={props.onClick}>
             <div className="inner-button-container" style={innerContainerStyles}>
-                <span className="button-container-bg" style={props.disabled ? activeStyle : null}></span>
+                <span className="button-container-bg" style={props.disabled ? activeStyle : bgStyle}></span>
                 <span className="button-container-base" style={buttonStyles}></span>
                 <span className="button-container-text" style={props.disabled ? {color: 'var(--mainWhite)'} : null}>{props.text}</span>
             </div>

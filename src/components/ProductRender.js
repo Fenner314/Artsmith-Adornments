@@ -4,10 +4,10 @@ import { products } from '../data';
 import JewelryProduct from './JewelryProduct';
 
 export default function ProductRender(props) {
-    const children = props.children;
-    const renderedProducts = products.filter(product =>
-        product.category.includes(children)
-    )
+    const {renderedProducts} = props;
+    // const renderedProducts = products.filter(product =>
+    //     product.category.includes(children)
+    // )
 
     return (
         <React.Fragment>

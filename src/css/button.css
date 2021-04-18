@@ -16,7 +16,7 @@
 }
 .button-container:hover, 
 .button-container:focus {
-    color: var(--mainWhite);
+    color: var(--mainWhite) !important;
     outline: none;
 }
 .button-container:hover .button-container-bg,
