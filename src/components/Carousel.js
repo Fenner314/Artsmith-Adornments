@@ -11,7 +11,6 @@ export default function Carousel(props) {
         product.category.includes(category)
     )
 
-    const [slides, setSlides] = useState(renderedProducts);
     const [transform, setTransform] = useState(0);
     const [length, setLength] = useState(renderedProducts.length);
     const [stop, setStop] = useState((length - 5) * 292);

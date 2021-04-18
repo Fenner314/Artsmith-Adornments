@@ -16,6 +16,12 @@ export default function SlideControls(props) {
             <button id={transform > stop ? "invisible" : "next-btn"} onClick={handleRightArrowClick}>
                 <i class="fas fa-chevron-right" />
             </button>
+            {/* <button id={transform <= 0 ? "invisible" : "prev-btn"} onClick={handleLeftArrowClick}>
+                <i class="fas fa-chevron-left" />
+            </button>
+            <button id={transform > stop ? "invisible" : "next-btn"} onClick={handleRightArrowClick}>
+                <i class="fas fa-chevron-right" />
+            </button> */}
         </div>
     )
 }
