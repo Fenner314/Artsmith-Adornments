@@ -8,7 +8,7 @@ export default function JewelryList(props) {
 
     return (
         <div className="jewelry-list-container">
-            <Carousel title={'Rings'} category={'rings'} handleLength={handleLength} length={testLength} />
+            <Carousel title={'Rings'} category={'rings'} />
             <Carousel title={'Necklaces'} category={'necklace'} />
             <Carousel title={'Earrings'} category={'earring'} />
             <Carousel title={'Bracelets'} category={'bracelet'} />

@@ -64,7 +64,6 @@
 }
 
 #message {
-    resize: none;
     grid-column: 2 / span 1;
     grid-row: 1 / span 3;
     height: 100%;

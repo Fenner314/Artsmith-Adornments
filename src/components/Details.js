@@ -23,7 +23,6 @@ export default function Details(props) {
             <div className={detailsOpen ? "details-container" : "invisible"}>
                 <div className="details-title-row">
                     <h1>{name}</h1>
-                    {/* <span className="menu-close-modal" >&times;</span> */}
                     <i class="fas fa-times fa-2x menu-close" onClick={handleDetailsToggle}></i>
                 </div>
                 <div className="details-info-row">
@@ -36,13 +35,6 @@ export default function Details(props) {
                         <p>{available ? 'Available' : 'Sold-out'}</p>
                         <p>Description: {description}</p>
                         <p>Size: {size}</p>
-                        {/* <div className="details-info-row-info-cart">
-                            <span>Quantity</span>
-                            <button className="details-btn">
-                                <span className="details-btn-bg"></span>
-                                <p className="details-btn-text">Add To Cart</p>
-                            </button>
-                        </div> */}
                         <div className="details-info-row-info-cart">
                             <p>Quantity:</p>
                             <div className="quantity-ctrl">
@@ -72,10 +64,6 @@ export default function Details(props) {
                                     onClick={() => addToCart(id)}
                                 />
                             </div>
-                            {/* <div className={inCart ? "details-btn-inactive details-btn" :"details-btn"} onClick={() => {inCart ? console.log('') : addToCart(id)}}>
-                                <span className={inCart ? "details-btn-bg-active details-btn-bg" : "details-btn-bg"}></span>
-                                <span className={inCart ? "details-btn-text-active details-btn-text" : "details-btn-text"}>{inCart ? 'Added To Cart' : 'Add To Cart'}</span>
-                            </div> */}
                         </div>
                     </div>
                 </div>

@@ -1,7 +1,6 @@
 /* .card-container {
     position: relative;
 } */
-
 .product-card {
     position: relative;
     display: flex;
@@ -12,6 +11,7 @@
     /* margin-right: 3.26%; */
     
     transition: all .3s ease-in-out;
+    color: black;
 }
 .product-card:hover {
     cursor: pointer;
@@ -20,6 +20,7 @@
 .product-card:hover .product-card-desc {
     color: var(--mainYellow);
     background: var(--offWhite);
+    text-decoration: none;
 }
 .product-card:hover img {
     transform: scale(1.1);
@@ -33,12 +34,14 @@
 }
 
 .product-card-image {
+    height: 260px;
     overflow: hidden;
     position: relative;
 }
 
 .product-card-image img {
     width: 260px;
+    /* height: 260px; */
     transition: transform .3s ease-in-out;
 }
 
