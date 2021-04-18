@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import {ProductContext} from '../../App';
 import Button from '../Button';
-import PaybalButton from './PaypalButton';
+import PaypalButton from './PaypalButton';
 
 export default function CartTotals(props) {
     const {history} = props
@@ -48,7 +48,7 @@ export default function CartTotals(props) {
                         </span>
                         <strong>${cartTotal}</strong>
                     </h5>
-                    <PaybalButton 
+                    <PaypalButton 
                         total={cartTotal} 
                         clearCart={clearCart} 
                         history={history} 
