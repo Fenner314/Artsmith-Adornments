@@ -216,11 +216,12 @@ function App() {
     let subTotal = 0;
     cart.map(item => (subTotal += (item.price * item.count)));
     const tempTax = subTotal * .065;
-    const tax = parseFloat(tempTax.toFixed(2));
-    const total = subTotal + tax;
+    const tax = parseFloat(tempTax);
+    const tempTotal = subTotal + tax;
+    const total = tempTotal.toFixed(2);
     
     setCartSubTotal(subTotal);
-    setCartTax(tax);
+    setCartTax(tax.toFixed(2));
     setCartTotal(total);
   }
 
