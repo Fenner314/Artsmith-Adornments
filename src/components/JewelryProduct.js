@@ -39,20 +39,6 @@ export default function JewelryProduct(props) {
                         onClick={() => addToCart(id)}
                     />
                 </div>
-                {/* <button 
-                    className="cart-btn" 
-                    disabled={inCart ? true : false} 
-                    onClick={() => {
-                        addToCart(id);
-                        addTotals();
-                }}>
-                    <span className={inCart ? "cart-btn-bg cart-btn-bg-active" : "cart-btn-bg"}></span>
-                    <span className={inCart ? "cart-btn-text cart-btn-text-active" : "cart-btn-text"}>{inCart ? "Added To Cart" : "Add To Cart"}</span>
-                </button> */}
-                {/* <button className="cart-btn" disabled={inCart ? true : false} onClick={() => inCart ? console.log('no') : addToCart(id)}>
-                    <span className={inCart ? "cart-btn-bg cart-btn-bg-active" : "cart-btn-bg"}></span>
-                    <span className={inCart ? "cart-btn-text cart-btn-text-active" : "cart-btn-text"}>{inCart ? "Added To Cart" : "Add To Cart"}</span>
-                </button> */}
             </div>
         </div>
     )

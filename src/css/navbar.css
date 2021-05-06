@@ -2,13 +2,14 @@
     background-color: white;
     box-shadow: 0px 2px 15px rgb(117, 117, 117);
     display: flex;
-    position: fixed;
+    /* position: fixed; */
     top: 0;
     align-items: center;
     justify-content: space-between;
-    padding: 0rem 0;
+    padding: .5rem 1rem;
     /* height: 105px; */
     font-family: 'Source Sans Pro', sans-serif;
+    width: 100vw;
 }
 
 .logo {
@@ -74,6 +75,9 @@
 .menu-close:hover {
     color: var(--mainYellow);
     transform: rotate(-90deg);
+}
+#navbar-close {
+    margin: .5rem 2rem;
 }
 
 .nav-item {

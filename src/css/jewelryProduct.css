@@ -1,14 +1,14 @@
-/* .card-container {
-    position: relative;
-} */
+.card-container {
+    width: fit-content;
+    margin: auto;
+}
 .product-card {
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin-right: 32px;
-    /* margin-right: 3.26%; */
+    width: fit-content;
     
     transition: all .3s ease-in-out;
     color: black;
@@ -34,14 +34,13 @@
 }
 
 .product-card-image {
-    height: 260px;
+    /* height: 260px; */
     overflow: hidden;
     position: relative;
 }
 
 .product-card-image img {
-    width: 260px;
-    /* height: 260px; */
+    width: 265px;
     transition: transform .3s ease-in-out;
 }
 

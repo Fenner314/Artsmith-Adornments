@@ -1,6 +1,4 @@
-import React, { useEffect, useContext } from 'react';
-import { ProductContext } from '../App';
-import { products } from '../data';
+import React from 'react';
 import JewelryProduct from './JewelryProduct';
 
 export default function ProductRender(props) {

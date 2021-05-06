@@ -1,30 +1,31 @@
-import React, { useContext } from 'react';
+import React from 'react';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 import { ProductContext } from '../App';
+import { products } from '../data';
 import Carousel from './Carousel';
 import ProductRender from './ProductRender';
 
 export default function JewelryList(props) {
-    const { testLength, setTestLength, handleLength } = useContext(ProductContext);
-
+    const renderedProducts = products.filter(product =>
+        product.category.includes(props.category)
+    )
+console.log(renderedProducts)
+    const settings = {
+        arrows: true,
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 2,
+        slidesToScroll: 1
+    }
     return (
         <div className="jewelry-list-container">
             <Carousel title={'Rings'} category={'rings'} />
             <Carousel title={'Necklaces'} category={'necklace'} />
             <Carousel title={'Earrings'} category={'earring'} />
             <Carousel title={'Bracelets'} category={'bracelet'} />
-            {/* <Carousel>
-                CHILDREN BETWEEN PRODUCTRENDERS ARE CATEGORY OF DESIRED PRODUCT
-                <ProductRender title={'Rings'} handleLength={handleLength} length={testLength}>rings</ProductRender>
-            </Carousel>
-            <Carousel>
-                <ProductRender title={'Necklaces'}>necklace</ProductRender>
-            </Carousel>
-            <Carousel>
-                <ProductRender title={'Earrings'}>earring</ProductRender>
-            </Carousel>
-            <Carousel>
-                <ProductRender title={'Bracelets'}>bracelet</ProductRender>
-            </Carousel> */}
         </div>
     )
 }
