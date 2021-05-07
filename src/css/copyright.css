@@ -3,3 +3,13 @@
     text-align: center;
     padding: 1.5rem;
 }
+
+.copyright a {
+    color: var(--mainYellow);
+
+    transition: color .3s ease-in-out;
+}
+.copyright a:hover {
+    color: rgb(34, 185, 153);
+    text-decoration: none;
+}

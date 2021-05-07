@@ -8,7 +8,7 @@ export default function ProductCategory(props) {
     } = props
 
     return (
-        <div>
+        <div className="category-card">
             <Link to="/jewelry" style={{textDecoration: 'none'}}>
                 <div className="product-card">
                     <div className="product-card-image">

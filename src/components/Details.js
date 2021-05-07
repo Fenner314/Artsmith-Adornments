@@ -20,7 +20,7 @@ export default function Details(props) {
 
     return (
         <>
-            <div className={detailsOpen ? "details-container" : "invisible"}>
+            <div className={detailsOpen ? "details-container" : "hidden"}>
                 <div className="details-title-row">
                     <h1>{name}</h1>
                     <i class="fas fa-times fa-2x menu-close" onClick={handleDetailsToggle}></i>
@@ -36,21 +36,23 @@ export default function Details(props) {
                         <p>Description: {description}</p>
                         <p>Size: {size}</p>
                         <div className="details-info-row-info-cart">
-                            <p>Quantity:</p>
-                            <div className="quantity-ctrl">
-                                <button 
-                                    className="quantity-btn" 
-                                    disabled={count <= 1 || inCart ? true : false}
-                                    onClick={() => qtyDecrement(id)}>
-                                    -
-                                </button>
-                                <span className="quantity-text" id="">{count}</span>
-                                <button 
-                                    className="quantity-btn" 
-                                    disabled={inCart ? true : false}
-                                    onClick={() => qtyIncrement(id)}>
-                                    +
-                                </button>
+                            <div className="quantity-container">
+                                <p>Quantity:</p>
+                                <div className="quantity-ctrl">
+                                    <button 
+                                        className="quantity-btn" 
+                                        disabled={count <= 1 || inCart ? true : false}
+                                        onClick={() => qtyDecrement(id)}>
+                                        -
+                                    </button>
+                                    <span className="quantity-text" id="">{count}</span>
+                                    <button 
+                                        className="quantity-btn" 
+                                        disabled={inCart ? true : false}
+                                        onClick={() => qtyIncrement(id)}>
+                                        +
+                                    </button>
+                                </div>
                             </div>
                             <div className="details-btn">
                                 <Button
