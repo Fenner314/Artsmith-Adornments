@@ -24,12 +24,6 @@ export default function CartTotals(props) {
                             onClick={() => clearCart()}
                         />                    
                     </div>
-                    {/* <button 
-                        className="btn btn-outline-danger text-uppercase mb-3 px-5"
-                        type="button"
-                        onClick={() => clearCart()}>
-                        Clear Cart
-                    </button> */}
                     <h5>
                         <span className="text-title">
                             Subtotal:&nbsp;

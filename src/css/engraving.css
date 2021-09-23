@@ -57,7 +57,8 @@
 
 .engraving-form-group textarea {
     border: none;
-    height: 8rem
+    height: 8rem;
+    padding: .5rem;
 }
 
 .b-0 {

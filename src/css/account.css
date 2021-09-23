@@ -16,7 +16,7 @@
 }
 
 .account-greeting {
-    padding: 4rem 0 2rem 0
+    padding: 4rem 0 2rem 0;
 }
 
 .update-container {
@@ -39,6 +39,18 @@
     transition: opacity .3s; 
 }
 
+.update-container-2 {
+    background-color: var(--offWhite);
+    width: 310px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    margin: 2rem;
+    box-shadow: 2px 2px 15px var(--mainGray);
+}
+
 .update-button {
     width: 100%;
     display: flex;
@@ -54,4 +66,16 @@
 }
 .update-cancel:hover {
     text-decoration: underline;
+}
+
+@media only screen and (max-width: 600px) {
+    .account-greeting {
+        font-size: 1.5rem
+    }
+}
+
+@media only screen and (max-width: 418px) {
+    .account-greeting {
+        font-size: 1.1rem;
+    }
 }

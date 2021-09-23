@@ -19,7 +19,9 @@ import Login from './components/login/Login';
 import Register from './components/login/Register';
 import ForgotPassword from './components/login/ForgotPassword';
 import Cart from './components/Cart/Cart';
+import Thanks from './components/Thanks';
 import { auth, db } from './components/login/Firebase';
+import UpdateAccount from './components/UpdateAccount';
 
 export const ProductContext = React.createContext();
 const USER_KEY = 'artsmithAdornments.user';
@@ -46,8 +48,6 @@ function App() {
     setTestLength(val)
   }
 
-  console.log(db)
-
   useEffect(() => {
     addTotals()
   }, [cart]);
@@ -72,15 +72,6 @@ function App() {
     localStorage.setItem(USER_KEY, JSON.stringify(user))
   }, [user]);
 
-  // useEffect(() => {
-  //   getCart();
-  // });
-
-  // const getCart = async () => {
-  //   const response = db.collection('cart');
-  //   const data = await response.get();
-  // }
-
   const handleLogin = (email, password) => {
     setIsLoggedIn(true);
     return auth.signInWithEmailAndPassword(email, password);
@@ -88,7 +79,11 @@ function App() {
 
   const handleRegister = (email, password) => {
     setIsLoggedIn(true);
-    return auth.createUserWithEmailAndPassword(email, password);
+    auth.createUserWithEmailAndPassword(email, password).then(cred => {
+      db.collection('users').doc(cred.user.uid).set({
+        favQuote: 'working'
+      })
+    })
   }
 
   useEffect(() => {
@@ -107,6 +102,12 @@ function App() {
 
   const resetPassword = (email) => {
     return auth.sendPasswordResetEmail(email)
+  }
+
+  const updateName = (name) => {
+    return user.updateProfile({
+      displayName: name
+    })
   }
 
   const updateEmail = (email) => {
@@ -244,6 +245,7 @@ function App() {
     handleRegister,
     logout,
     resetPassword,
+    updateName,
     updateEmail,
     updatePassword,
     setIsLoggedIn,
@@ -281,10 +283,12 @@ function App() {
             <Route path="/refund_policy" component={RefundPolicy} />
             <Route path="/sizing_chart" component={SizingChart} />
             <Route path="/account" component={Account} />
+            <Route path="/update_account" component={UpdateAccount} />
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
             <Route path="/forgot-password" component={ForgotPassword} />
             <Route path="/cart" component={Cart} />
+            <Route path="/thanks" component={Thanks} />
           </Switch>
           <Details {...productDetails} detailProduct={detailProduct} />
           <CartAdded />

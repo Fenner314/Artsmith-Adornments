@@ -76,12 +76,14 @@ export default function Navbar() {
                     <a className="link" href="#contact">Contact Me</a>
                 </li>
                 <li className="nav-item large-screen-d-none">
-                    <a href="https://www.facebook.com/artsmithadornments" target="_blank" rel="noreferrer">
+                    <a href="https://www.facebook.com/artsmithadornments" target="_blank" rel="noreferrer" onClick={handleMenuToggle}>
                         <i className="fab fa-facebook right-link-item"/>
                     </a>
-                    {/* <Link to="/account"> */}
-                        <i className="far fa-user-circle right-link-item"/>
-                    {/* </Link> */}
+                    <div className="account-icon-container" onClick={handleMenuToggle}>
+                        <Link to={isLoggedIn ? "/account" : "/login"}>
+                            <i className="far fa-user-circle right-link-item account-icon"/>
+                        </Link>
+                    </div>
                 </li>
             </ul>
             <ul className="right-links">
@@ -90,8 +92,8 @@ export default function Navbar() {
                 </a>
                     <div className="account-icon-container">
                         <Link to={isLoggedIn ? "/account" : "/login"}>
-                            <i className="far fa-user-circle right-link-item account-icon"/>
-                            <p className="account-box">Account</p>
+                            <i className="far fa-user-circle right-link-item account-icon small-screen-d-none"/>
+                            {/* <p className="account-box">Account</p> */}
                         </Link>
                     </div>
                 <Link to="/cart">

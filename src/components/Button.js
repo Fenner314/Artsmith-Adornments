@@ -28,7 +28,7 @@ export default function Button(props) {
     }
     
     return (
-        <button className="button-container" style={containerStyles} disabled={props.disabled} onClick={props.onClick}>
+        <button className="button-container" style={containerStyles} disabled={props.disabled} onClick={props.onClick} onSubmit={props.onSubmit} type="submit">
             <div className="inner-button-container" style={innerContainerStyles}>
                 <span className="button-container-bg" style={props.disabled ? activeStyle : bgStyle}></span>
                 <span className="button-container-base" style={buttonStyles}></span>

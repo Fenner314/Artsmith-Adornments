@@ -11,7 +11,7 @@
 .contact-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    padding: 4rem;
+    padding: 80px 4rem;
     padding-bottom: 0;
 }
 
@@ -116,6 +116,9 @@
     background-color: transparent;
     padding: .2rem
 }
+#newsletter:focus {
+    outline: none;
+}
 
 @media only screen and (min-width: 1360px) {
     .contact-grid-form input {
@@ -156,6 +159,7 @@
     .contact-grid {
         display: block;
         text-align: center;
+        padding: 2rem 2rem 0 2rem;
     }
     .contact-grid-middle {
         margin-top: 3rem
@@ -189,4 +193,5 @@
     .newsletter {
         margin-left: -2rem;
     }
+    
 }

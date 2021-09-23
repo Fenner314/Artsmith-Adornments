@@ -1,0 +1,46 @@
+.confirm-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: calc(100vh - 105px);
+}
+
+.confirm-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    max-width: 380px;
+    padding: 24px;
+    background: var(--offWhite);
+    box-shadow: 2px 2px 15px var(--mainGray);
+}
+
+.header h1 {
+    margin-bottom: 0;
+}
+
+.body {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    letter-spacing: .075em;
+    font-weight: 400;
+}
+
+.body > span {
+    padding: 10px 0;
+}
+ 
+.body a {
+    color: var(--mainYellow);
+
+    transition: all .3s linear;
+}
+.body a:hover,
+.body a:focus {
+    color: black;
+    text-decoration: none;
+}

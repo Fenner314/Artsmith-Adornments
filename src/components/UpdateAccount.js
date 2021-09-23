@@ -1,16 +1,26 @@
 import React, { useState, useContext, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { ProductContext } from '../App';
 import Button from './Button';
+import { db } from './login/Firebase';
 
 export default function UpdateAccount(props) {
+    const nameRef = useRef();
     const emailRef = useRef();
     const passwordRef = useRef();
     const passwordConfirmRef = useRef();
+    const quoteRef = useRef();
     const [message, setMessage] = useState('');
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(false);
 
-    const { user, updateEmail, updatePassword } = useContext(ProductContext);
+    const { user, updateName, updateEmail, updatePassword } = useContext(ProductContext);
+
+    const test = (quote) => {
+        return db.collection('users').doc(user.uid).set({
+            favQuote: quote
+        })
+    }
 
     const handleSubmit = (e) => {
         // e.preventDefault()
@@ -23,12 +33,18 @@ export default function UpdateAccount(props) {
         setLoading(true);
         setError('');
 
+        if (nameRef.current.value !== user.displayName) {
+            promises.push(updateName(nameRef.current.value))
+        }
         if (emailRef.current.value !== user.email) {
             promises.push(updateEmail(emailRef.current.value))
         }
-        if (passwordRef.current.value !== user.email) {
+        if (passwordRef.current.value) {
             promises.push(updatePassword(passwordRef.current.value))
         }
+        // if (quoteRef.current.value) {
+        //     promises.push(test(quoteRef.current.value))
+        // }
 
 
         Promise.all(promises)
@@ -60,16 +76,23 @@ export default function UpdateAccount(props) {
 
    return (
     <div className="auth-page">
-        <div className="update-container"> 
-            <i class="fas fa-times fa-2x menu-close" onClick={() => props.setUpdateOpen()}></i>
+        <div className="auth-container"> 
+            {/* <i class="fas fa-times fa-2x menu-close" onClick={() => props.setUpdateOpen()}></i> */}
             <h3 className="auth-header">Update Account</h3>
             <p className={message ? "reset-message" : ""}>{message}</p>
             <p className={error ? "error-message" : ""}>{error}</p>
             {/* <p className={error ? "error-message" : ""}>{error}</p> */}
-            <div className="auth-form">
+            <form className="auth-form" 
+                // onSubmit={() => handleSubmit}
+            >
+                <div className="auth-form-group">
+                    <label htmlFor="name">Name</label>
+                    <input autoFocus type="text" name="name" ref={nameRef} defaultValue={user && user.displayName} />
+                    <span className="auth-underline"></span>
+                </div>
                 <div className="auth-form-group">
                     <label htmlFor="email">Email</label>
-                    <input autoFocus type="email" name="email" ref={emailRef} defaultValue={user && user.email} />
+                    <input type="email" name="email" ref={emailRef} defaultValue={user && user.email} />
                     <span className="auth-underline"></span>
                 </div>
                 <div className="auth-form-group">
@@ -84,21 +107,28 @@ export default function UpdateAccount(props) {
                     <i class="far fa-eye" onClick={() => showConfirmPass()}></i>
                     <span className="auth-underline"></span>
                 </div>
-            </div>
-            <div className="auth-footer">
-                {/* <button type="submit" className="register-btn">Register</button> */}
-                <div className="update-button">
-                    <Button
-                        text={'Update'}
-                        height={'36px'}
-                        maxWidth={'100%'}
-                        fontSize={'1rem'}
-                        border={'1px solid var(--mainYellow)'}
-                        onClick={() => handleSubmit()}
-                    />
-                    <p className="update-cancel" onClick={() => props.setUpdateOpen()}>Cancel</p>
+                {/* <div className="auth-form-group">
+                    <label htmlFor="confirm-password">Favorite Quote</label>
+                    <input type="text" name="quote" ref={quoteRef} />
+                    <span className="auth-underline"></span>
+                </div> */}
+            </form>
+                <div className="auth-footer">
+                    {/* <button type="submit" className="register-btn">Register</button> */}
+                    <div className="update-button" >
+                        <Button
+                            text={'Update'}
+                            height={'36px'}
+                            maxWidth={'100%'}
+                            fontSize={'1rem'}
+                            border={'1px solid var(--mainYellow)'}
+                            onClick={() => handleSubmit()}
+                        />
+                        <Link to="/account" style={{textDecoration: 'none'}}>
+                            <p className="update-cancel">Cancel</p>
+                        </Link>
+                    </div>
                 </div>
-            </div>
         </div>
     </div>
    )
